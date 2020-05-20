@@ -1,0 +1,20 @@
+header{
+    text-align: center;
+    
+}
+h3{
+    white-space: pre;
+}
+.menu-options{
+    font-size: 30px;
+}
+html{
+    background-color: rgb(207, 126, 5);
+}
+.center-image{
+    text-align: center;
+}
+h1{
+    font-style: italic;
+    color: rgb(133, 62, 5);
+}
