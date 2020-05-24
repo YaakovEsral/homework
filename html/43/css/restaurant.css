@@ -1,0 +1,78 @@
+header{
+    text-align: center;
+    margin-top: 10px;
+    /* max-width: 300px; */
+    border-width: 4px;
+    border-style: dashed;
+    border-color: brown;
+    border-radius: 25px;
+}
+h3{
+    white-space: pre;
+}
+.menu-options{
+    font-size: 30px;
+}
+html{
+    background-color: #303030;   
+}
+.home-image-body img{
+    float: left;
+    margin-right: 15px;
+    height: 13em;
+}
+
+.home-image-body p {
+    font-size: 25px;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 8px #FFFFFF, 2px 2px 8px #8EFFF3;
+} 
+
+h1{
+    font-style: italic;
+    color: rgb(133, 62, 5);
+}
+
+.restaurant-menu-item{
+    border: brown 2px dotted;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    width: fit-content;
+    max-width: 300px;
+    /* height: fit-content; */
+    height: 365px;
+    float: left;
+    text-align: center;
+}
+
+.restaurant-menu-item img{
+    border-radius: 10px;
+}
+
+.restaurant-menu-item a{
+    font-weight: bold;
+}
+
+body{
+    /* max-width: 800px; */
+    margin: auto;
+    width: 80%;
+    /* font-family: ; */
+}
+a {
+    text-decoration: none;
+
+}
+a:hover {
+    text-decoration: underline;
+}
+a:link{
+    color: red;
+}
+a:visited{
+    color: green;
+}
+a:focus{
+    color: yellow;
+}
