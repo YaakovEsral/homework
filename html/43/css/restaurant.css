@@ -28,6 +28,21 @@ html{
     text-shadow: 2px 2px 8px #FFFFFF, 2px 2px 8px #8EFFF3;
 } 
 
+.contact-info{
+    font-size: 24px;
+    background-color: bisque;
+    opacity: .75;
+    max-width: 563px;
+    border: 5px solid #5162FF;
+    border-radius: 4px;
+    float: right;
+    padding: 10px;
+}
+
+#contact-pic{
+    height: 320px;
+}
+
 h1{
     font-style: italic;
     color: rgb(133, 62, 5);
