@@ -1,0 +1,29 @@
+html{
+    background-color: black;
+}
+
+body{
+    width: 800px;
+    margin: auto;
+    background-color: white;
+    text-align: center;
+}
+
+p{
+    border: 1px black solid;
+    font-size: 15px;
+    width: 12em;
+    height: 7em;
+    margin: 2em;
+    text-align: center;
+    background-color: yellow;
+    display: inline-block;
+    /* float: left; */
+    overflow: hidden;
+    padding: 43px;
+    box-sizing: border-box;
+}
+h3{
+    text-align: left;
+    font-size: 15px;
+}

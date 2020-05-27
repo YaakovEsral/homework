@@ -1,0 +1,134 @@
+/* general site css */
+html{
+    /* background-color: #303030;  */
+    background-image: url("../images/gray_texture.jpg");
+    
+      
+}
+header{
+    text-align: center;
+    margin-top: 10px;
+    margin: auto;
+    /* max-width: 800px; */
+    border-width: 4px;
+    border-style: dashed;
+    border-color: #696969;
+    border-radius: 25px;
+    padding: 10px;
+    padding-bottom: 10px;
+    /* background-image: url("../images/cows.jpg"); */
+}
+
+hr{
+    color: black;
+}
+h1{
+    font-style: italic;
+    color: rgb(133, 62, 5);
+}
+
+h3{
+    white-space: pre;
+}
+nav{
+    font-size: 30px;
+}
+
+li{
+    display: inline;
+}
+
+body{
+    /* max-width: 800px; */
+    margin: auto;
+    width: 80%;
+    /* font-family: ; */
+}
+
+a {
+    text-decoration: none;
+
+}
+a:hover {
+    text-decoration: underline;
+}
+a:link{
+    color: red;
+}
+a:visited{
+    color: green;
+}
+a:focus{
+    color: yellow;
+}
+
+/* for specific pages */
+.home-image-body img{
+    float: left;
+    margin-right: 15px;
+    height: 13em;
+}
+
+.home-image-body p {
+    font-size: 25px;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 8px #FFFFFF, 2px 2px 8px #8EFFF3;
+} 
+
+
+.restaurant-menu-item{
+    border: #696969 2px dashed;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    width: fit-content;
+    max-width: 300px;
+    /* height: fit-content; */
+    height: 365px;
+    /* float: left; */
+    display: inline-block;
+    text-align: center;
+    color: #da3300;
+    background-image: url("../images/blue_texture.jpg");
+    background-size: cover;
+}
+
+.restaurant-menu-item h3{
+    font-family: Candara, sans-serif;
+}
+
+.restaurant-menu-item img{
+    border-radius: 10px;
+}
+
+.restaurant-menu-item a{
+    font-weight: bold;
+}
+
+.contact-info{
+    font-size: 24px;
+    text-align: left;
+    
+    background-color: bisque;
+    opacity: .75;
+    max-width: 482px;
+    border: 5px solid #5162FF;
+    border-radius: 4px;
+    
+    /* float: right; */
+    /* clear: left; */
+    display: inline-block;
+    
+    vertical-align: top;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+#contact-pic{
+    height: 320px;
+    display: inline-block;
+}
+
+.centering-container{
+text-align: center;
+}
