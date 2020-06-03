@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ewert&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Katibeh&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
+
+/* general site css */
+html{
+    /* background-color: #303030;  */
+    background-image: url("../images/gray_texture.jpg");
+    
+      
+}
+header{
+    /* text-align: center; */
+    margin-top: 2em;
+    /* max-width: 800px; */
+    /* border-width: 4px;
+    border-style: dashed; */
+    background-color: #696969;
+    border-radius: 25px;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+
+/* for nav and page heading */
+nav, nav ul, nav li, h1{
+    display: inline;
+}
+
+nav{
+    margin-left: 2em;
+}
+
+nav a, nav ul{
+    font-size: 2.5em;
+}
+
+nav ul{
+    padding: 0px;
+}
+
+nav li a{
+    font-family: Katibeh, fantasy;
+    color: #77B9FF;
+}
+
+nav a:hover{ 
+    font-size: 2.5em;
+    font-family: Katibeh, fantasy;
+    color: #77B9FF;
+    text-decoration: underline;
+}
+
+header h1{
+    margin-left: 149px;
+    font-size: 3em;
+    
+}
+
+#test{
+    display: inline;
+    margin: 0 auto;
+}
+
+/* ---------------- */
+
+hr{
+    color: black;
+}
+h1{
+    font-style: italic;
+    color: #da3300;
+    font-family: Lobster, fantasy;
+}
+
+main h2, main a:hover{
+    font-size: 32px;
+    color: #77B9FF;
+    font-family: Katibeh, fantasy;
+    font-style: italic;
+    width: 9em;
+    margin: 10px auto;
+}
+/* unresolved issue: the width of the a seems to be the full length of the body */
+main a{
+    width: 9em;
+}
+
+h3{
+    white-space: pre;
+}
+
+
+li{
+    display: inline;
+}
+
+body{
+    /* max-width: 800px; */
+    margin: auto;
+    width: 80%;
+    /* font-family: ; */
+}
+
+a {
+    text-decoration: none;
+
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* for specific pages */
+
+/* home page body: */
+.home-image-body img{
+    float: left;
+    margin-right: 15px;
+    height: 13em;
+}
+
+.home-image-body p {
+    font-size: 25px;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 8px #FFFFFF, 2px 2px 8px #8EFFF3;
+} 
+/* ----------------- */
+
+/* restaurant menu item: */
+
+.restaurant-menu-item * { /*to override the reset*/
+    text-align: center;
+    /* font-style: italic; */
+    color: #da3300;
+    font-size: 16px;
+}
+
+.restaurant-menu-item{
+    border: #696969 2px dashed;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    width: fit-content;
+    max-width: 300px;
+    /* height: fit-content; */
+    height: 365px;
+    /* float: left; */
+    display: inline-block;
+    text-align: center;
+    color: #da3300;
+    background-image: url("../images/blue_texture.jpg");
+    background-size: cover;
+}
+
+.restaurant-menu-item h3{
+    font-family: Candara, sans-serif;
+}
+
+.restaurant-menu-item img{
+    border-radius: 10px;
+}
+
+.restaurant-menu-item a{
+    font-weight: bold;
+}
+/* ------------------- */
+
+/* contact info box: */
+.contact-info{
+    text-align: left;
+    
+    background-color: bisque;
+    opacity: .75;
+    max-width: 482px;
+    border: 5px solid #5162FF;
+    border-radius: 4px;
+    
+    
+    margin-left: 20px;
+    padding: 10px;
+    
+    /* float: right; */
+    /* clear: left; */
+    display: inline-block;
+    vertical-align: top;
+}
+
+.contact-info p{
+    margin-top: 3px;
+    font-size: 24px;;
+}
+
+#contact-pic{
+    height: 320px;
+    display: inline-block;
+}
+/* --------------------- */
+
+.centering-container{
+text-align: center;
+}
+
+/* audio and video: */
+
+audio, video{
+    display: inline-block;
+}
+
+/* social media: */
+
+.social-media{
+    text-align: center;
+}
+
+.social-media h2{
+    width: 11em;
+}
+
+.icons{
+    height: 80px;
+}
+
+.sm_icon{
+    vertical-align: top;
+    height: 60px;
+    margin: 10px;
+    max-width: 80px;
+    box-sizing: border-box;
+}
+.sm_icon:hover{
+    height: 70px;
+}
