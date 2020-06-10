@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smokie's Grill | Menu</title>
+
+    <!-- <link href="css/reset.css" rel="stylesheet"> -->
+    <link href="css/restaurant.css" rel="stylesheet">
+
+    <!-- <link href="css/normalize.css" rel="stylesheet"> -->
+
+    <link href="images/sg_logo.png" rel="icon">
+
+    <style>
+        table {
+            border-collapse: collapse;
+            background-color: white;
+            display: inline-table;
+        }
+
+        th,
+        td {
+            border: 1px black solid;
+            font-family: Calibri, sans-serif;
+            font-size: 20px;
+            padding: 5px;
+        }
+
+        thead {
+            border: 3px solid black;
+            background-color: #75b9ff;
+        }
+
+        tbody tr:nth-child(2n) {
+            background-color: lightblue;
+        }
+
+        td:hover {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="small-screen-header">
+        <h1 class="rest-name">Smokie's Grill</h1>
+        <nav>
+            <ul>
+                <li><a id="current-page" href="index.html">Home</a></li> |
+                <li><a href="menu.html">Menu</a></li> |
+                <li><a href="contactUs.html">Contact Us</a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li> |
+                <li><a id="current-page" href="menu.html">Menu</a></li> |
+                <li><a href="contactUs.html">Contact Us</a> </li>
+            </ul>
+        </nav>
+        <h1 class="rest-name">Smokie's Grill</h1>
+    </header>
+    <br>
+
+    <hr>
+    <div class="centering-container">
+        <div class="restaurant-menu-item">
+            <h3>Hot Dog $5.99</h3>
+            <p>Our all-beef cured dog grilled with homemade BBQ sauce.
+                <br>Served with choice of fries or onion rings.</p>
+            <img src="images/hot_dog2.jpg" alt="Our delicious hot dog." height="200">
+        </div>
+
+        <div class="restaurant-menu-item">
+            <h3>Chili Dog $6.99</h3>
+            <p>Delicious hot dog topped with special spice-blend chili.
+                <br>Served with choice of fries or onion rings.</p>
+            <img src="images/chili_dog2.jpg" alt="A mouth-watering chili dog." height="200">
+        </div>
+
+        <div class="restaurant-menu-item">
+            <h3>Corn Dog $6.99</h3>
+            <p>Deliciously moist corn wrapping on the outside of an oven baked hot dog.
+                <br>Served with choice of fries or onion rings.
+            </p>
+            <img src="images/corn_dog.jpg" alt="Delicious corn dog." height="200">
+        </div>
+
+        <div class="restaurant-menu-item">
+            <h3>Fried Chicken Wings $7.99</h3>
+            <p>Delicious chicken wings battered with our sweet 'n tangy sauce and fried. Comes with 7 pieces.
+                <br>Served with fries, onion rings, or coleslaw.
+            </p>
+            <img src="images/fried_chicken_wings.jpg" alt="Our fried chicken wings." height="200">
+        </div>
+
+        <div class="restaurant-menu-item">
+            <h3>Hamburger $7.99</h3>
+            <p>Juicy 1/4 pound beef burger on a toasted bun with lettuce, tomatoes, and onion.
+                <br>Served with choice of fries, onion rings, or coleslaw.
+            </p>
+            <img src="images/hamburger.jpg" alt="A juicy hamburger." height="200">
+        </div>
+
+        <div class="restaurant-menu-item">
+            <h3>Rib Steak $14.99</h3>
+            <p>12 oz. steak made with our special spice blend and grilled to the ultimate tenderness.
+                <br> Served with two of the following: fries, onion rings, coleslaw.
+                <a href="rib_steak.html">More info</a>.
+            </p>
+            <img src="images/rib_steak.jpg" alt="A perfectly grilled rib steak." height="200">
+        </div>
+
+
+        <table>
+            <caption>Feelings You Will Have Upon Purchase</caption>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Guilt Level</th>
+                    <th>Regret Level</th>
+                    <th>How much you will want to tip</th>
+                    <th>How likely you are to come back</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hot Dog</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>75&cent</td>
+                    <td>Unlikely</td>
+                </tr>
+                <tr>
+                    <td>Chili Dog</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>75&cent</td>
+                    <td>Very likely</td>
+                </tr>
+                <tr>
+                    <td>Corn Dog</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>95&cent</td>
+                    <td>Unlikely</td>
+                </tr>
+                <tr>
+                    <td>Fried Chicken Wings</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>$1.25</td>
+                    <td>Somewhat likely</td>
+                </tr>
+                <tr>
+                    <td>Hamburger</td>
+                    <td>High</td>
+                    <td>High</td>
+                    <td>$1.50</td>
+                    <td>Very likely</td>
+                </tr>
+                <tr>
+                    <td>Rib Steak</td>
+                    <td>High</td>
+                    <td>Low</td>
+                    <td>$2.00</td>
+                    <td>Very likely</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

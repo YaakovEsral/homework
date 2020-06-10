@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap'); /*contact info box*/
+@import url('https://fonts.googleapis.com/css2?family=Katibeh&display=swap'); /*Nav menu font*/
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); /*Smokie's Grill header font*/
+
+
+
+/* general site css */
+html{
+    background-image: url("../images/gray_texture.jpg");
+      
+}
+
+body{
+    /* width and centering of the body is necessary primarily for the nav bar.
+    Everything else is centered on its own */
+
+    margin: auto;
+    max-width: 1080px;
+}
+
+
+header{
+    /* text-align: center; */
+    margin-top: 2em;
+    /* max-width: 800px; */
+    /* border-width: 4px;
+     */
+    background-color: #696969;
+    border-radius: 25px;
+}
+
+/* for nav and page heading */
+nav, nav ul, nav li, h1{
+    display: inline-block;
+    margin: 0; /*remove the default margin of inline-block*/
+}
+
+nav:not(.small-screen-header){
+    margin-left: 3%;
+    width: 30%;
+    font-size: 36px;
+    font-family: Katibeh, fantasy;
+    /* doesn't work for some reason: */
+    /* color: #77B9FF;  */
+
+    
+}
+
+nav ul{
+    padding: 0px;
+}
+
+nav li a{
+    color: #77B9FF;
+}
+
+nav a:hover{ 
+    text-decoration: underline;
+}
+
+h1.rest-name{
+    width: 33%;
+    text-align: center;
+    font-size: 36px;
+    /* font-style: italic; */
+    color: #da3300;
+    font-family: Lobster, fantasy;
+}
+/* header for small screen: */
+
+.small-screen-header{
+    display: none;
+    background-color: #399058;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+}
+
+.small-screen-header .rest-name, .small-screen-header nav, 
+.small-screen-header li, .small-screen-header ul{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 1003px){
+    .small-screen-header{
+        display: block;
+    }
+    header:not(.small-screen-header){
+        display: none;
+    }
+}
+
+
+/* ---------------- */
+
+/* elements in the main: */
+
+hr{ /*doesn't seem to be working*/
+    color: black;
+}
+
+main h2{
+    text-align: center;
+}
+
+main h2 a, main h2, main a:hover{
+    font-size: 32px;
+    color: #77B9FF;
+    font-family: Katibeh, fantasy;
+    font-style: italic;
+    width: 9em;
+    margin: 10px auto;
+}
+
+h3{
+    white-space: pre;
+}
+
+a {
+    text-decoration: none;
+
+}
+a:hover {
+    text-decoration: underline;
+}
+
+#current-page{
+    color: #77B9FF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+/* for specific pages */
+
+/* home page body: */
+.home-image-body img{
+    float: left;
+    margin-right: 15px;
+    height: 13em;
+}
+
+.home-image-body p {
+    font-size: 25px;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 8px #FFFFFF, 2px 2px 8px #8EFFF3;
+} 
+/* ----------------- */
+
+.subscribe-message{
+    position: fixed;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    
+    background-color: #77B9FF;
+    border-radius: 5px;
+}
+
+.subscribe-message p{
+    font-size: 20px;
+    text-align: center;
+    font-family: Calibri;
+    margin: 0;
+    padding: 20px;
+}
+
+.exit-icon{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+/* restaurant menu item: */
+
+.restaurant-menu-item *, .restaurant-menu-item a:hover { /*to override the reset*/
+    text-align: center;
+    /* font-style: italic; */
+    color: #da3300;
+    font-size: 16px;
+    font-family: Candara, sans-serif;
+}
+
+.restaurant-menu-item{
+    border: #696969 2px dashed;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    width: fit-content;
+    max-width: 300px;
+    /* height: fit-content; */
+    height: 365px;
+    /* float: left; */
+    display: inline-block;
+    text-align: center;
+    color: #da3300;
+    background-image: url("../images/blue_texture.jpg");
+    background-size: cover;
+}
+
+.restaurant-menu-item img{
+    border-radius: 10px;
+}
+
+.restaurant-menu-item a{
+    font-weight: bold;
+}
+
+/* menu table: */
+
+table {
+    border-collapse: collapse;
+    background-color: white;
+    display: inline-table;
+}
+
+caption{
+    background-color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+th,
+td {
+    border: 1px black solid;
+    font-family: Calibri, sans-serif;
+    font-size: 20px;
+    padding: 5px;
+}
+
+thead {
+    border: 3px solid black;
+    background-color: #75b9ff;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: lightblue;
+}
+
+td:hover {
+    background-color: lightcoral;
+}
+
+/* ------------------- */
+
+/* contact info box: */
+.style-box-1{
+    background-color: bisque;
+    opacity: .75;
+    max-width: 482px;
+    border: 5px solid #77B9FF;
+    border-radius: 4px;
+    
+    
+    margin-left: 20px;
+    padding: 10px;
+    
+    /* float: right; */
+    /* clear: left; */
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.style-box-1 p{
+    margin-top: 3px;
+    font-size: 24px;
+    font-family: "Noto Sans JP", sans-serif;
+    text-align: center;
+}
+
+#contact-pic{
+    height: 320px;
+    display: inline-block;
+}
+/* --------------------- */
+
+.centering-container{
+text-align: center;
+}
+
+/* audio and video: */
+
+audio, video{
+    display: inline-block;
+}
+
+/* social media: */
+
+.social-media{
+    text-align: center;
+}
+
+.social-media h2{
+    width: 11em;
+}
+
+.icons{
+    height: 80px;
+}
+
+.sm_icon{
+    vertical-align: top;
+    height: 60px;
+    margin: 10px;
+    max-width: 80px;
+    box-sizing: border-box;
+}
+.sm_icon:hover{
+    /* height: 70px; */
+    transform: scale(1.2);
+}
