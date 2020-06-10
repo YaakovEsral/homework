@@ -27,6 +27,7 @@ header{
      */
     background-color: #696969;
     border-radius: 25px;
+    position: relative;
 }
 
 /* for nav and page heading */
@@ -42,8 +43,7 @@ nav:not(.small-screen-header){
     font-family: Katibeh, fantasy;
     /* doesn't work for some reason: */
     /* color: #77B9FF;  */
-
-    
+    height: 55px;
 }
 
 nav ul{
@@ -65,6 +65,8 @@ h1.rest-name{
     /* font-style: italic; */
     color: #da3300;
     font-family: Lobster, fantasy;
+    position: absolute;
+    bottom: 7px;
 }
 /* header for small screen: */
 
@@ -202,6 +204,10 @@ a:hover {
     background-size: cover;
 }
 
+.restaurant-menu-item h3{
+    white-space: pre;
+}
+
 .restaurant-menu-item img{
     border-radius: 10px;
 }
@@ -216,12 +222,14 @@ table {
     border-collapse: collapse;
     background-color: white;
     display: inline-table;
+    margin: 20px;
 }
 
 caption{
     background-color: white;
     padding: 10px;
     font-size: 20px;
+    border-radius: 5px;
 }
 
 th,
