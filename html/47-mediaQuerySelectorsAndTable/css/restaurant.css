@@ -27,7 +27,7 @@ header{
      */
     background-color: #696969;
     border-radius: 25px;
-    position: relative;
+    /* position: relative; */
 }
 
 /* for nav and page heading */
@@ -43,7 +43,7 @@ nav:not(.small-screen-header){
     font-family: Katibeh, fantasy;
     /* doesn't work for some reason: */
     /* color: #77B9FF;  */
-    height: 55px;
+    /* height: 55px; */
 }
 
 nav ul{
@@ -65,8 +65,8 @@ h1.rest-name{
     /* font-style: italic; */
     color: #da3300;
     font-family: Lobster, fantasy;
-    position: absolute;
-    bottom: 7px;
+    /* position: absolute; */
+    /* bottom: 7px; */
 }
 /* header for small screen: */
 
