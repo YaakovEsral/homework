@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="css/restaurant.css">
+    <link rel="icon" href="images/sg_logo.png">
+
+    <style>
+        input, label{
+            display: block;
+            margin: 10px auto;
+        }
+
+        label{
+            display: block;
+        }
+
+        .form-container{
+            background-color: #696969;
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        input[type="radio"], input[type="checkbox"]{
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="small-screen-header">
+        <h1 class="rest-name">Smokie's Grill</h1>
+        <nav>
+            <ul>
+                <li><a id="current-page" href="index.html">Home</a></li> |
+                <li><a href="menu.html">Menu</a></li> |
+                <li><a href="contactUs.html">Contact Us</a> </li>
+            </ul>
+        </nav>
+
+
+        <!-- <h3>Order Now</h3> -->
+    </header>
+
+    <header>
+
+        <nav>
+            <ul>
+                <li><a id="current-page" href="index.html">Home</a></li> |
+                <li><a href="menu.html">Menu</a></li> |
+                <li><a href="contactUs.html">Contact Us</a> </li>
+            </ul>
+        </nav>
+        <h1 class="rest-name">Smokie's Grill</h1>
+
+        <!-- <h3>Order Now</h3> -->
+    </header>
+
+    <h3>Your input is important to us!</h3>
+    <p>Please fill out the form below to share your feedback. Our service is built on reports
+        from patrons like you.
+    </p>
+
+    <div class="form-container">
+    
+    <form action="feedback.php" method="POST">
+        <label for="first">First name:</label>
+        <input id="first" name="firstName" type="text" required value="John">
+
+        <label for="last">Last name:</label>
+        <input id="last" name="lastName" type="text" value="Doe">
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email">
+
+        <label for="date">Date of Visit:</label>
+        <input id="date" name="dateVisited" type="date">
+
+        <label for="rating">Rating:</label>
+        <input id="rating" name="rating" type="range" min="1" max="5">
+
+        <label for="favDish">What was your favorite dish?</label>
+        <input id="favDish" name="favoriteDish" type="radio" value="hotDog">Hot Dog
+        <input id="favDish" name="favoriteDish" type="radio" value="chiliDog">Chili Dog
+        <input id="favDish" name="favoriteDish" type="radio" value="cornDog">Corn Dog
+        <input id="favDish" name="favoriteDish" type="radio" value="wings">Fried Chicken Wings
+        <input id="favDish" name="favoriteDish" type="radio" value="burger">Hamburger
+        <input id="favDish" name="favoriteDish" type="radio" value="steak">Rib steak
+
+        <label for="like">What aspects of your visit did you like?</label>
+        <input id="like" name="like" type="checkbox" value="waiter">Waiter service
+        <input id="like" name="like" type="checkbox" value="ambience">Ambience
+        <input id="like" name="like" type="checkbox" value="food">Food
+        <input id="like" name="like" type="checkbox" value="piano">Live piano
+ 
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" type="text" rows="4" cols="50">
+            Enter your comments here:</textarea>
+
+        <input type="submit" value="Send">
+
+    </form>
+</div>
+
+</body>
+
+</html>
