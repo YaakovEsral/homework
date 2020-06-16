@@ -36,13 +36,19 @@ nav, nav ul, nav li, h1{
     margin: 0; /*remove the default margin of inline-block*/
 }
 
-header nav:not(.small-screen-header){
-    /* ##################### */
-    /* doesn't seem to be overriding default settings for second nav: */
+header:not(.small-screen-header){
+    display: flex;
+    justify-content: space-between;
+    height: 55px;
+}
+
+header nav:not(.small-screen-header) *{
+   /* fixed the issues! there wasn't enough specificity in the selectors,
+   so I added the asterisk(*) */
     font-size: 36px;
     font-family: Katibeh, fantasy;
-    /* doesn't work for some reason: */
     color: #77B9FF; 
+    margin: 0;
 }
 
 header>nav:not(.small-screen-header){
@@ -51,12 +57,22 @@ header>nav:not(.small-screen-header){
     /* height: 55px; */
 }
 
-nav ul{
-    padding: 0px;
+header nav:nth-of-type(2){
+    /* targeting the second nav ("Feedback") */
+    width: 30%;
+    margin: 0;
+    margin-right: 3%;
+    text-align: right;
 }
 
-nav a{
-    color: #77B9FF;
+header p{
+     /*targeting the p in the main header. this allows for space-between in flex layout so that
+     the h1 is centered  */
+    width: 33%;
+}
+
+nav ul{
+    padding: 0px;
 }
 
 nav a:hover{ 
