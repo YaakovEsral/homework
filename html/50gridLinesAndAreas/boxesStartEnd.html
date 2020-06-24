@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 8vmax;
+            grid-auto-rows: 7vmax;
+            gap: .25em;
+            justify-content: center;
+        }
+
+        div {
+            background-color: #dc6f2a;
+        }
+
+        @media screen and (min-width: 600px) {
+            body {
+                grid-template-columns: 5vmax 5vmax;
+            }
+
+            div {
+                background-color: #2e9a7a;
+            }
+
+            div:nth-child(1) {
+                grid-column: 1 / 3;
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            body {
+                grid-template-columns: repeat(4, 3vmax);
+                
+            }
+            
+            div {
+                background-color: #b13535;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

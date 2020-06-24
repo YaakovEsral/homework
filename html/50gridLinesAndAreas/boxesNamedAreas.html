@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 8vmax;
+            grid-auto-rows: 7vmax;
+            gap: .25em;
+            justify-content: center;
+            grid-template-areas: ;
+        }
+
+        div {
+            background-color: #dc6f2a;
+        }
+
+        @media screen and (min-width: 600px) {
+            body {
+                grid-template-columns: 5vmax 5vmax;
+                grid-template-areas: "One One"
+            }
+
+            div {
+                background-color: #2e9a7a;
+            }
+
+            div:nth-child(1) {
+                grid-area: One;
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            body {
+                grid-template-columns: repeat(4, 3vmax);
+                grid-template-areas: "One One Two Three";
+            }
+            
+            div {
+                background-color: #b13535;
+            }
+
+            div:nth-child(2){
+                grid-area: Two;
+            }
+
+            div:nth-child(3){
+                grid-area: Three;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

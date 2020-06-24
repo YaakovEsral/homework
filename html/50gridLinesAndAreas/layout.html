@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            gap: 1em;
+        }
+
+        body * {
+            grid-column: 2 / -2;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        header div * {
+            /* background-color: #09031f; */
+            display: inline-block;
+        }
+
+        ad {
+            border: green 2px dotted;
+        }
+
+        @media screen and (min-width: 600px) {
+            body {
+                grid-template-columns: 1fr 2fr 2fr 1fr;
+            }
+
+            header {
+                grid-column: 2 / -2;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            li {
+                display: inline;
+            }
+        }
+
+        @media screen and (min-width: 800px) {
+            body {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            header {
+                grid-column: 2 / 4;
+            }
+
+            ad {
+                grid-column: 4 / 5;
+                grid-row: 1 / 2;
+                /* border: none; */
+            }
+
+            ad img, ad non{
+                display: none;
+            }
+
+            aside {
+                grid-column: 5 / 6;
+                grid-row: 1 / 2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo"><img src="images/logo.jpg" alt="">
+            <h4>www.ChiliDogs.com</h4>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home">Home</a></li>
+                <li><a href="Products">Products</a></li>
+                <li><a href="About">About</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+    <article>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A distinctio et commodi ullam omnis quam
+        blanditiis voluptatum delectus, dolore ipsam enim quas? Tempore cum assumenda id quia eius qui veniam
+        eveniet est, suscipit similique quis earum nisi voluptatum placeat voluptas dolor ad accusamus tempora
+        eligendi, ea, velit fuga temporibus. Excepturi rerum repudiandae blanditiis quia, fuga suscipit repellat
+        saepe totam minus omnis quisquam consectetur quidem deserunt illo! Quaerat magnam sunt quo magni accusamus
+        amet voluptatibus nobis velit illum vitae inventore suscipit tempore, cum aspernatur dolor laudantium
+        distinctio placeat ipsum veniam, temporibus explicabo eaque! Eaque assumenda deleniti nisi fugiat tempore
+        quam soluta delectus sit. Voluptatum, quaerat odit? Dolore eum quibusdam alias id quam tempora cum sit
+        aperiam exercitationem libero atque ipsam similique maiores numquam possimus, iste, omnis aliquam quidem
+        recusandae officiis, delectus hic autem! Aliquid reiciendis, obcaecati officiis voluptatum animi vitae harum
+        consectetur soluta non nostrum velit quisquam tenetur laborum illum molestias aperiam ipsa temporibus qui a
+        sequi maxime nulla exercitationem accusantium! Minima laboriosam numquam vitae quidem perferendis cumque!
+        Voluptates animi iste sed modi recusandae ullam nostrum explicabo saepe possimus iusto. Deleniti pariatur
+        numquam corrupti sit nostrum dicta alias cupiditate quaerat minus suscipit nesciunt labore non possimus quis
+        autem, adipisci doloribus officiis.</article>
+    <ad>
+        <figure><a href=""><img height="200px" src="images/fidget.png" alt=""></a>
+            <figcaption>Please buy our fidget spinner! We know this is a difficult time and we want you to
+                know that we are working to ensure you get the best experience. <non>Our employees all
+                wash their hands every ten minutes and are required to wear masks constantly. Even
+                in the shower!</non>
+            </figcaption>
+        </figure>
+    </ad>
+    <aside>Just as an aside... Lorem ipsum, dolor sit amet consectetur adipisicing elit. At numquam accusantium minus
+        recusandae dolor amet unde soluta optio animi eaque. Necessitatibus velit neque aperiam excepturi animi tempora
+        officiis quod recusandae?</aside>
+    <footer>&copy 2020 The Company That Sells Chili Dogs. Chile, South America. No dogs maybe removed
+        from the premises, whether dead or alive.
+    </footer>
+</body>
+
+</html>
