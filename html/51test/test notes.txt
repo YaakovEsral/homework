@@ -1,0 +1,34 @@
+How to get the pictures aligned properly?
+issue: header text is centered, but caption text is left-aligned
+
+possible solution:
+justify content center to header is centered. should not take up more than
+its container, therefore it should work.
+
+text align left on caption. should work, as the container is still centered,
+but its content is left aligned.
+
+how to lay out media group and media single?
+
+grid for group. lay out each media single in flex container, and lay each out in
+group. (good from design perspective to use grid on the group in case of more
+products).
+
+possible that you could also use flex on the group since it's just one line. you
+could probably make it work.
+
+how to make media resizable?
+probably use max-width 100%
+
+issue: seems like the video height is a pixel shorter than image height
+not sure how to resolve
+possible solution: googled it. used object-fit: fill. alt: object-fit: cover;
+
+fix: 
+bottom margin (last section) - solved! transparent border to prevent margin 
+collapse
+padding for form section - fixed!
+align header and footer text - fixed! though wondering if there's a better way
+
+shadow and styled input boxes + diff fonts
+media alignment-text aligned with image, remove extra space
