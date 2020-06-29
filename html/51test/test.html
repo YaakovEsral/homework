@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ESTUFF - A PCS Company</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -61,7 +61,7 @@
     </section>
 
     <section id="signup">
-        <form action="">
+        <form action="submitForm.php" method="POST">
             <h3>Sign Me Up!</h3>
 
             <div class="break"></div>
@@ -81,54 +81,60 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsam exercitationem voluptatibus
             placeat.</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Year</th>
-                    <th>1st Quarter Profits</th>
-                    <th>2nd Quarter Profits</th>
-                    <th>3rd Quarter Profits</th>
-                    <th>4th Quarter Profits</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tr>
-                <td></td>
-                <td>$1652145.00</td>
-                <td>$1652145.00</td>
-                <td>$1652145.00</td>
-                <td>$1652145.00</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>$1652145.00</td>
-                <td>$1652145.00</td>
-                <td>$1652145.00</td>
-                <td>$1652145.00</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>$1652145.00</td>
-                <td>$1652145.00</td>
-                <td>$1652145.00</td>
-                <td>$1652145.00</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>$1652145.00</td>
-                <td>$1652145.00</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td></td>
-            </tr>
-            <tfoot>
-                <td>Total</td>
-                <td></td>
-            </tfoot>
-        </table>
+        <div class="table">
+            <h3>Profits - By Quarter</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>1st Quarter Profits</th>
+                        <th>2nd Quarter Profits</th>
+                        <th>3rd Quarter Profits</th>
+                        <th>4th Quarter Profits</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2012</td>
+                        <td>$1652145.00</td>
+                        <td>$1652145.00</td>
+                        <td>$1652145.00</td>
+                        <td>$1652145.00</td>
+                        <td>$50022223.00</td>
+                    </tr>
+                    <tr>
+                        <td>2013</td>
+                        <td>$1652145.00</td>
+                        <td>$1652145.00</td>
+                        <td>$1652145.00</td>
+                        <td>$1652145.00</td>
+                        <td>$50022223.00</td>
+                    </tr>
+                    <tr>
+                        <td>2014</td>
+                        <td>$1652145.00</td>
+                        <td>$1652145.00</td>
+                        <td>$1652145.00</td>
+                        <td>$1652145.00</td>
+                        <td>$50022223.00</td>
+                    </tr>
+                    <tr>
+                        <td>2015</td>
+                        <td>$1652145.00</td>
+                        <td>$1652145.00</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>$50022223.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <td colspan="5">Total</td>
+                    <td>$2565245623.00</td>
+                </tfoot>
+            </table>
+
+        </div>
     </section>
 
     <section id="about">
