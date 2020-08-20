@@ -4,9 +4,13 @@ window.app.inc2 = (function(){
     'use strict';
 
     const incApp = {};
-    incApp.totalCounters = 0;
+    
+    // incApp.totalCounters = 0;
+    //from class
+    let totalCounters = 0;
+
     incApp.createCounter = function(){
-        this.totalCounters++;
+        totalCounters++;
 
         let count = 0;
         const inc = {};
@@ -16,6 +20,9 @@ window.app.inc2 = (function(){
         inc.getCount = function(){
             return count;
         };
+        inc.getTotalCounters(){
+            return totalCounters;
+        }
         return inc;
     };
 

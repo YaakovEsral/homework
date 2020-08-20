@@ -20,4 +20,6 @@
     console.log('second one:', incrementer2.getCount());
     console.log('third one:', incrementer3.getCount());
 
+    
+
 }());

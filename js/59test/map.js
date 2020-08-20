@@ -4,12 +4,15 @@
         let newArray = [];
         for (let i = 0; i < array.length; i++) {
             newArray[i] = callbackfn(array[i]);
+            //after class: use array.push
+            //use anonymous function
         }
         return newArray;
     }
 
     function double(num){
         return num * 2;
+
     }
 
     const numbers = [2,4,6];
