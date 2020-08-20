@@ -4,6 +4,9 @@ window.app.inc2 = (function(){
     'use strict';
 
     const incApp = {};
+    // SL - doing it this way anyone can change it...
+    // this should be a local variable in outer function kept alive by returned closure
+    // just like count in function below...
     incApp.totalCounters = 0;
     incApp.createCounter = function(){
         this.totalCounters++;

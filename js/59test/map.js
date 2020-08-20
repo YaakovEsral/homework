@@ -1,3 +1,4 @@
+// SL - nice!
 (function (){
     'use strict';
     function map(array, callbackfn) {
@@ -8,6 +9,7 @@
         return newArray;
     }
 
+    // SL - not a problem but why not an arrow function here? less code...
     function double(num){
         return num * 2;
     }
