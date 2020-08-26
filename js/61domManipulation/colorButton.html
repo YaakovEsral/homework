@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 2em;
+
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr 1fr;
+            column-gap: 1.5em;
+        }
+
+        section {
+            font-size: 20px;
+        }
+
+        main {
+            grid-column-start: 3;
+        }
+
+        #buttons {
+            grid-column: 2 / 4;
+        }
+
+        button {
+            font-size: 24px;
+            width: 4em;
+            margin: 1em;
+        }
+
+        table {
+            margin: 1em auto;
+            font-size: 2em;
+            border-collapse: collapse;
+            background-color: white;
+            grid-column-start: 2;
+        }
+
+        td,
+        th {
+            padding: 0 1em;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="buttons">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="default">Default</button>
+    </div>
+
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Color</th>
+                <th>BG Color</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td colspan="3">No colors yet</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <main id="content">
+        <div>
+            <h1>First Header</h1>
+            <section>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, impedit rerum repudiandae illo cumque
+                dolore blanditiis amet deleniti nihil distinctio fuga neque eius ipsa magnam architecto sequi
+                consequuntur
+                facilis recusandae! Itaque omnis nostrum quod repellendus provident iste tempora beatae dicta quis quam.
+                Fuga reiciendis, nulla odit cumque eaque numquam quidem tenetur officiis rerum animi quae consectetur
+                quos
+                tempora possimus corporis nostrum suscipit! Fugiat non corporis temporibus autem odit dolore, earum
+                eaque
+                magni? Ab repellat earum aliquid maxime nihil tempore modi atque, inventore ipsa sint sequi repudiandae
+                nobis? Porro dolor, perspiciatis eum blanditiis maxime illum voluptatibus velit ut at voluptatem sed
+                quam id
+                excepturi fugit ipsa culpa molestias quibusdam! Odio culpa reiciendis eos, eaque amet quibusdam officia
+                quas
+                nobis ab id dolorum distinctio illum magni, excepturi et placeat. Perferendis dicta modi earum
+                reiciendis
+                tempore error sunt explicabo quasi ea dolorum velit magnam, et eveniet saepe necessitatibus molestias
+                architecto autem! Nostrum, vero quae. Quaerat beatae velit repellat in eius quisquam ullam recusandae
+                sed
+                quidem aliquid odio accusamus autem, deleniti rerum qui fugit ea eligendi minima. Quam, cum omnis. Quas
+                reprehenderit officiis nobis fugit ea dignissimos ex deserunt, doloremque ipsum fuga sapiente optio
+                dolores
+                odio numquam, dolorum voluptas necessitatibus aliquid dolorem quos itaque!</section>
+        </div>
+        <div>
+            <h2>Second Header</h2>
+            <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit explicabo aliquam,
+                adipisci, ipsum aut amet sint odit sapiente ab sit deserunt recusandae! Consectetur libero fugit minus
+                corporis est mollitia voluptates tempore sapiente neque nostrum iste ex saepe, officiis hic tenetur modi
+                quis esse quisquam! Natus soluta beatae cum ullam obcaecati incidunt, neque iste quasi dolore sint.
+                Repellendus suscipit eaque, excepturi perspiciatis harum debitis expedita sapiente, officia beatae quia
+                cupiditate blanditiis fugit minus sequi, dolores fuga distinctio ipsa. Quis ab vitae labore nostrum quia
+                sapiente fugiat! Praesentium, quas dolorem maiores laudantium tempora facere corporis id accusantium,
+                aliquid architecto ullam deleniti.</section>
+        </div>
+    </main>
+    <script src="colorButton.js"></script>
+</body>
+
+</html>
