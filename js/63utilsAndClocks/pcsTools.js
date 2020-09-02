@@ -14,7 +14,7 @@ window.pcs = function (id) {
         return getComputedStyle(element)[property]; //returns rgb
     }
 
-
+    let storedData = new Map();
 
     const theElem = get(id);
 
@@ -26,7 +26,7 @@ window.pcs = function (id) {
         // setCss: (property, value) => setCss(theElem, property, value),
         // getCss: property => getCss(theElem, property), 
         css: function (property, value) {
-            if (arguments < 2) {
+            if (arguments.length < 2) {
                 return getCss(theElem, property);
             }
             setCss(theElem, property, value);
@@ -53,6 +53,12 @@ window.pcs = function (id) {
             }
             const intId = setInterval(changeColors, interval);
             setTimeout(() => clearInterval(intId), duration);
+        },
+        data: function(key, value){
+            if(arguments.length < 2){
+                return(storedData.get(key));
+            }
+            storedData.set(key, value);
         }
     };
 };
