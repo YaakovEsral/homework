@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1 id="donald">Donald Trump</h1>
+    <h1 id="joe">Joe Biden</h1>
+    <script src="pcsTools.js"></script>
+    
+    <!-- first clock script. this script will load a clock in the bottom right corner -->
+    <script src="clock.js"></script>
+
+    <!-- second clock script. this script will load clocks in the bottom left corner
+    when you call the function pcs.clock.generateClock() -->
+    <!-- <script src="requestClock.js"></script> -->
+    <script>
+        
+        //original js from class
+        pcs('donald').css('color', 'red').click(()=> console.log('The Donald was clicked!'));
+        const joe = pcs('joe');
+        joe.css( 'color', 'blue');
+        joe.hide();
+        setTimeout(joe.show, 2000);
+
+        //new change colors function from pcsTools.js
+        const donald = pcs('donald');
+        donald.changeColors(20000, 1000);
+
+        //uncomment these lines to see the clocks from the second script
+        // pcs.clock.generateClock();
+        // pcs.clock.generateClock();
+    </script>
+</body>
+</html>
