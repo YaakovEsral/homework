@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Box</title>
+
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <input id="msgText">
+    <input type="checkbox" id="modal">
+    <button id="addMsg">Add</button>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sint autem ducimus consequatur blanditiis nam
+    atque expedita. Facere officia consequuntur neque vero consequatur. Eum aspernatur consequuntur vero dolorem
+    accusantium exercitationem architecto amet dolore saepe culpa, maiores numquam itaque quisquam delectus dolor,
+    ratione cumque consequatur vitae odio, eaque enim explicabo inventore. Voluptate, odio? Aspernatur, sed. Et
+    voluptatem culpa, quam quo totam cum? Iure tempore dicta labore consectetur laborum. Placeat adipisci quasi
+    temporibus ullam tempora at, veritatis natus amet corporis, perspiciatis a totam assumenda? Expedita consectetur
+    asperiores ab. Debitis architecto natus, odit, unde in magnam doloremque ipsum nostrum blanditiis cumque neque
+    officia commodi reiciendis animi tempore ea optio asperiores adipisci, corrupti eveniet tempora. Itaque vel
+    voluptates soluta qui quae. Aut, quidem. Eum vitae rerum quam eius suscipit doloremque cum, architecto ratione sint
+    animi repellendus mollitia odit rem cumque debitis, natus impedit! Facere nam velit ratione nobis officia aut
+    accusantium veniam numquam cupiditate sequi aperiam, quo quis nulla exercitationem voluptatibus mollitia. Officiis
+    repellendus voluptate explicabo earum saepe quis nostrum laborum, inventore eum recusandae optio quasi possimus!
+    Culpa illo iste cumque distinctio nobis, excepturi ipsam sint sapiente magni ab sed corporis. Deserunt, voluptatum
+    magni doloribus assumenda nostrum dolorem praesentium atque, consequatur, natus aut dolor!
+    <script src="messageBox.js"></script>
+    <script>
+        pcs.messageBox.show('This is a test of the emergency broadcast system', false, ['ok'], displayChoice);
+
+        const modalCheckbox = document.getElementById('modal');
+        const msgTextInput = document.getElementById('msgText');
+        const addButton = document.getElementById('addMsg');
+
+        function displayChoice(choice){
+            console.log('You picked', choice);
+        }
+        
+
+        //mostly done. need to figure out how to access the button the user clicked
+        //in order to print out, you picked 'this button'
+        //getting an error in other file - callback is not a function
+        addButton.addEventListener('click', () =>{
+            pcs.messageBox.show(msgTextInput.value, modalCheckbox.checked, ['Yes', 'No', 'Maybe'], 
+            displayChoice);// userInput => console.log('You picked ', userInput));
+        })
+    </script>
+</body>
+
+</html>
