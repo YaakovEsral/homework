@@ -41,7 +41,9 @@ window.pcs.messageBox = (function () {
             button.addEventListener('click', () =>{
                 document.body.removeChild(messageBox);
                 modalOverlay.style.display = 'none';
-                callback(elem);
+                if(callback){
+                    callback(elem);
+                }
             });
             
             buttons.appendChild(button);
