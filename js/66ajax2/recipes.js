@@ -31,10 +31,7 @@
         $('#recipePic').attr('src', recipe.pic);
 
         for (let i = 0; i < recipe.ingredients.length; i++) {
-            const li = document.createElement('li');
-            li.innerText = recipe.ingredients[i];
-            $('#recipeIngredients').append(li);    
-            
+            $('#recipeIngredients').append(`<li>${recipe.ingredients[i]}</li>`);    
         }
     }
 }());
