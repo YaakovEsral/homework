@@ -9,7 +9,8 @@
     });
 
     const input = $('#searchBar');
-    $('#submit').click(() => {
+    $('form').submit((e) => {
+        e.preventDefault();
         search();
     });
 
@@ -40,9 +41,9 @@
     function setMainImage(){
         $('.currentImage').removeClass('currentImage');
         $('#mainImage').attr('src', pics[currentImage].media.m);
-        $('figcaption').empty().append(pics[currentImage].title);
+        $('figcaption').empty().append(`${pics[currentImage].title}`);
         $('#thumbnails img')[currentImage].className = 'currentImage';
-        // $('#thumbnails')[0].scrollTo(100, 0);
+        $('#thumbnails img')[currentImage].scrollIntoView({behavior: "smooth", inline: "center"});
     }
 
     $('#rightArrow').click(() =>{

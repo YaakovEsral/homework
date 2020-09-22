@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Happy+Monkey&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+
+
+body {
+    text-align: center;
+    background-color: #CCAA80;
+    margin: 0;
+}
+
+#search {
+    text-align: center;
+    background-color: #3F5258;
+    color: #9BCEB3;
+    padding: .5em;
+}
+
+#search h1 {
+    margin: .25em;
+    font-family: 'Happy Monkey', fantasy;
+}
+
+#leftArrow,
+#rightArrow,
+#mainImageDiv {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#leftArrow,
+#rightArrow {
+    cursor: pointer;
+}
+
+#mainImageDiv {
+    text-align: center;
+    width: 610px;
+    margin-top: .5em;
+}
+
+figure {
+    margin: 0;
+}
+
+#mainImage {
+    height: 361px;
+    max-width: 610px;
+}
+
+figcaption {
+    height: 2.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+#thumbnails {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: auto;
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: #3F5258;
+    width: 80%;
+    margin: auto;
+}
+
+#thumbnails img {
+    margin: 5px;
+    height: 82px;
+    cursor: pointer;
+}
+
+.currentImage {
+    border: 6px solid #59A293;
+    height: 100px !important;
+}

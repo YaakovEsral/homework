@@ -5,85 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flickr Photo Viewer</title>
-
-    <style>
-        body {
-            text-align: center;
-        }
-
-        #search {
-            text-align: center;
-            background-color: #3F5258;
-            color: #9BCEB3;
-            padding: .5em;
-        }
-
-        #search h1 {
-            margin: .25em;
-        }
-
-        #leftArrow, #rightArrow, #mainImageDiv {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        #leftArrow, #rightArrow {
-            cursor: pointer;
-        }
-
-        #mainImageDiv {
-            text-align: center;
-            width: 610px;
-            margin-top: .5em;
-        }
-
-        figure {
-            margin: 0;
-        }
-
-        #mainImage{
-            height: 390px;
-            max-width: 610px;
-        }
-
-        #thumbnails {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            border: 2px solid black;
-            border-radius: 3px;
-            background-color: #3F5258;
-            width: 80%;
-            margin: auto;
-        }
-
-        #thumbnails img {
-            margin: 5px;
-            height: 82px;
-            cursor: pointer;
-        }
-
-        .currentImage{
-            border: 6px solid #070765;
-        }
-    </style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="search">
         <h1>Search for photos!</h1>
-
-        <input type="text" id="searchBar" value="dog">
-        <button id="submit">Search</button>
+        <form>
+            <input type="text" id="searchBar" value="dog">
+            <button>Search</button>
+        </form>
     </div>
 
     <img id="leftArrow" src="images/leftArrow.png" alt="">
 
     <div id="mainImageDiv">
         <figure>
-            <img id="mainImage" src=""
-                alt="">
+            <img id="mainImage" src="" alt="">
             <figcaption>Loading...</figcaption>
         </figure>
     </div>
