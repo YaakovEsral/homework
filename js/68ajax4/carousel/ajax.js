@@ -1,4 +1,4 @@
-// (function () {
+(function () {
     'use strict';
 
     let pics = [];
@@ -47,23 +47,35 @@
     }
 
     $('#rightArrow').click(() =>{
-        if(currentImage === pics.length -1){
-            currentImage = 0;
-        }
-        else{
-            currentImage++;
-        }
-        setMainImage();
+        slideImage(1);
     });
 
     $('#leftArrow').click(() =>{
-        if(currentImage === 0){
-            currentImage = pics.length - 1;
-        }
-        else{
-            currentImage--;
-        }
-        setMainImage();
+       slideImage(-1);
     });
 
-// }());
+    //currently seems like there's a bug - key listener will not trigger scrollIntoView function,
+    //hence the final function call scrollIntoViewIfNeeded
+    addEventListener('keydown', (e) =>{
+        if(e.key === "ArrowRight"){
+            slideImage(1);
+            // $('#thumbnails')[0].scrollBy(100, 0);
+        } else if (e.key === "ArrowLeft"){
+            slideImage(-1);
+        }
+        $('#thumbnails img')[currentImage].scrollIntoViewIfNeeded();
+    });
+
+    //algorithm is designed so that you can pass any number within pics.length as 'incr'
+    //and it will scroll accordingly
+    function slideImage(incr){
+        currentImage+=incr;
+        if(currentImage >= pics.length){
+            currentImage = -1 + incr;
+        } else if(currentImage <= -1){
+            currentImage = pics.length + incr;
+        }
+        setMainImage();
+    }
+
+}());
