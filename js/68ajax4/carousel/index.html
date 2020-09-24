@@ -12,23 +12,33 @@
     <div id="search">
         <h1>Search for photos!</h1>
         <form>
-            <input type="text" id="searchBar" value="coffee">
+            <input type="text" id="searchBar" value="kotel">
             <button>Search</button>
         </form>
     </div>
 
-    <img id="leftArrow" src="images/leftArrow.png" alt="">
+    <main>
+        <div id="picAndArrows">
+            <img id="leftArrow" class="hidable" src="images/leftArrow.png" alt="">
 
-    <div id="mainImageDiv">
-        <figure>
-            <img id="mainImage" src="" alt="">
-            <figcaption>Loading...</figcaption>
-        </figure>
-    </div>
+            <div id="mainImageDiv">
+                <figure>
+                    <img id="mainImage" src="images/noImage.png" alt="">
+                    <figcaption>Please check your connection...</figcaption>
+                </figure>
+            </div>
 
-    <img id="rightArrow" src="images/rightArrow.png" alt="">
-
-    <div id="thumbnails">
+            <img id="rightArrow" class="hidable" src="images/rightArrow.png" alt="">
+        </div>
+        <div id="info">
+            <h3>Info</h3>
+            <p>No information to display.</p>
+            <ul id="infoList">
+                
+            </ul>
+        </div>
+    </main>
+    <div id="thumbnails" class="hidable">
 
     </div>
 
