@@ -1,0 +1,32 @@
+10/12/20, 7:50 PM.
+Goals:
+1. Comment out selection options. - done!
+2. Research ways to access zmanim api (e.g. proxy) - done!
+    -Everything seems pretty much blocked on google.
+    -So I sent instructor an email.
+
+10/13/20
+Goals:
+1. Select which zmanim to display on the page - done!
+    I also ensured that we get the basic data, and that it gets the current date
+2. Display them - done!
+
+7:42 PM
+Goals:
+1. Re-enable the form allowing input for city, zip code, or lat long - done!
+2. In the event of a lat long selection, change the form to contain two inputs
+    for lat and long, respectively - done!
+
+7:58 PM
+Goals:
+1. Hide the lat long inputs by default. Show them only when lat long is selected - done!
+2. Stack the inputs so they are each on a separate line
+
+10/14/20
+Goals:
+1. Re-position zmanim info to be directly under weather info - done!
+2. Position form in the middle of the page - done!
+3. Make a larger header for the left column with words "INFO FOR YOUR LOCATION" - done!
+
+Also:
+Did lots more CSS to fix the page - rgba background, font sizes, new bg image, formatting the form

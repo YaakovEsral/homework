@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+
+/* 
+BA6154
+CDB97C
+B2CFAB
+2A8790
+265E74 
+*/
+
+html {
+    background: url(media/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+
+:root {
+    /* background-color: #B2CFAB; */
+    font-size: 10px;
+}
+
+* {
+    /* color: #333; */
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend Deca', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+    /* justify-content: center; */
+    gap: 1rem;
+}
+
+#heading, #localInfo {
+    grid-column: 1 / 3;
+    margin-left: 3rem;
+    /* text-align: center; */
+}
+
+#mainHeader {
+    padding: 1.6rem 0;
+    /* margin-left: 1.6rem; */
+    font-size: 4.2rem;
+    margin-bottom: 0;
+}
+
+#localInfo h2 {
+    font-size: 3.1rem;
+    text-decoration: underline;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+p {
+    font-size: 1.8rem;
+}
+
+#localInfo {
+    background-color: rgb(230 133 102 / .6);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.btn {
+    padding: .5rem;
+    display: block;
+    margin: auto;
+}
+
+.spinner{
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.hidden{
+    display: none;
+}
+
+form {
+    text-align: center;
+    /* display: inline-block; */
+
+}
+
+form h3 {
+    margin-bottom: .7rem;
+}
+
+input, button, select {
+    font-size: 2.2rem;
+    margin-bottom: .5rem;
+}
