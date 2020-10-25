@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    background-color: #80b5e4;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    gap: 1em;
+    
+}
+
+#main {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    margin: auto;
+}
+
+#parts {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    overflow: scroll;
+}
+
+#parts img {
+    /* display: block; */
+    /* position: absolute; */ 
+    object-fit: none;
+    margin: 2em;
+}

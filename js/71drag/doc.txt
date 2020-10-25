@@ -1,0 +1,24 @@
+10/23/20
+11:11 AM
+
+Goal:
+Consider different options for using local storage (array, one img at a time) - done!
+
+Possible idea: each time an item is moved (on mouseup), save that item inside an
+array. Save the item itself as an object, storing its name and coordinates (key
+and value). The result will be the image object with its info inside an array.
+The array will be used for storing each of the image objects.
+
+The outer storage will be an array. The advantage of using an array is that you can loop
+through it. The advantage of an object is that you can use key value pairs and easily access
+an item through its key. However, looping through an object is less conventional. We
+will use an array and access the values using indexOf method.
+
+New plan:
+instead of worrying about how everything will look, I have a new plan.
+Everything will be displayed in a single scroll window.
+There will be two buttons: Save and Start Over.
+Start Over will return everything to its original state (refresh or remove position absolute?).
+Save will add everything to local storage.
+Before the save button is clicked, everything will be saved in the array. Upon clicking the save
+button, the elements will be added to local storage.
