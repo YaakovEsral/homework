@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            text-align: center;
+            position: relative;
+        }
+
+        canvas {
+            margin: auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #buttonDiv {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .btn1 {
+            background-color: #0B2D98;
+            color: #FDFDFD;
+            border-radius: 5px;
+            width: 185px;
+            height: 39px;
+            font-size: 16px;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!--img id="snakeHead" src="media/snakehead.png"/-->
+    <!-- <audio id="chomp" src="media/chomp.mp3"></audio> -->
+    <div id="buttonDiv" class="hidden">
+        <button id="playAgain" class="btn1">Play Again</button>
+        <br>
+        <button id="noThanks" class="btn1">No, Thanks</button>
+    </div>
+    <canvas id="theCanvas"></canvas>
+    <script src="app.js"></script>
+</body>
+
+</html>
