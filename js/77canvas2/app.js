@@ -18,6 +18,10 @@
         done!
     -maybe make a grid
     -make smooth motion that will only change direction on the grid squares
+    -increase points when   a)player passes a certain point threshold, or
+                            b)player hits the apple within a certain timeframe
+
+    -increase game speed when user passes a certain point threshold
 
     */
 
@@ -179,8 +183,8 @@
         //when the snake hits the apple
         if (snakeParts[0].x === appleX && snakeParts[0].y === appleY) {
             newApplePosition();
-            geshmak.muted = false;
-            geshmak.play();
+            chomp.muted = false;
+            chomp.play();
             score += SCORE_UNIT;
 
             //add a body part
