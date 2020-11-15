@@ -8,6 +8,7 @@
     -slow loading time for the first load of the sound file
     -we should be making promises and on promise return start the game
     -properly center the GAME OVER text (maybe use an html element)
+        done!
     
     improvements:
     -make snake grow each time
@@ -18,10 +19,14 @@
         done!
     -maybe make a grid
     -make smooth motion that will only change direction on the grid squares
-    -increase points when   a)player passes a certain point threshold, or
+    -increase points when   a)player passes a certain point threshold,
+                                done!
+                            or
                             b)player hits the apple within a certain timeframe
+                                done!
 
     -increase game speed when user passes a certain point threshold
+        done!
 
     */
 
@@ -61,32 +66,29 @@
 
     let gameOn = false;
 
-    let snakeX;
-    let snakeY;
     let snakeXunit;
     let snakeYunit;
 
     let snakeParts = [];
-    // snakeParts.body = [];
 
     let appleX;
     let appleY;
 
-    let score = 0;
-    const SCORE_UNIT = 5;
+    let score;
+    let scoreUnit;
+    const SCORE_BONUS = 10;
+    let bonusMessageDisplay = false;
 
     let oldTimestamp;
-    let interval = 300;
+    let interval;
+    let lastAppleEaten;
+    let currentAppleEaten;
 
     const buttonDiv = get('buttonDiv');
     const playAgainBtn = get('playAgain');
     const quitBtn = get('noThanks');
 
-    //code to determine how the ready state of the audio files works
-    // const now = new Date();
-
-    // chomp.onloadstart = logTime(chomp);
-    // chomp.ondurationchange = logTime(chomp);
+    //code to determine how the regTime(chomp);
     // chomp.onloadedmetadata = logTime(chomp);
     // chomp.onloadeddata = logTime(chomp);
     // chomp.onprogress = logTime(chomp);
@@ -128,8 +130,12 @@
             y: UNIT
         };
 
+        interval = 400;
+        score = 0;
+        scoreUnit = 3;
+        lastAppleEaten = window.performance.now();
+
         newApplePosition();
-        // repaint();
         gameOn = true;
         animate();
     }
@@ -184,12 +190,40 @@
 
         drawSnake();
 
+        if (bonusMessageDisplay) {
+            c.fillStyle = 'black';
+            c.font = '50px fantasy';
+            c.fillText('QUICK SCORE!', canvas.width / 3, canvas.height / 3.3);
+            c.fillText(`BONUS ${SCORE_BONUS} POINTS`, canvas.width / 3.3, canvas.height / 2.5);
+    
+        }
+
+
         //when the snake hits the apple
         if (snakeParts[0].x === appleX && snakeParts[0].y === appleY) {
             newApplePosition();
             chomp.muted = false;
             chomp.play();
-            score += SCORE_UNIT;
+            score += scoreUnit;
+
+            //update the score unit and interval every 5 apples
+            if (snakeParts.length % 5 === 0) {
+                scoreUnit *= 2;
+                //don't let interval go under 100
+                if (interval > 100) {
+                    interval *= 0.75;
+                }
+
+            }
+            //bonus points if you get the next apple fast enough
+            lastAppleEaten = currentAppleEaten || window.performance.now();
+            currentAppleEaten = window.performance.now();
+            // console.log('last', lastAppleEaten, 'current', currentAppleEaten);
+            if (currentAppleEaten - lastAppleEaten < 4000) {
+                score += SCORE_BONUS;
+                bonusMessageDisplay = true;
+                setTimeout(() => bonusMessageDisplay = false, 1500);
+            }
 
             //add a body part
             snakeParts.push({
@@ -249,6 +283,8 @@
     });
 
     function newApplePosition() {
+
+
         let spotOccupied = true;
         let x;
         let y;
@@ -284,6 +320,8 @@
     }
 
     function endGame() {
+        bonusMessageDisplay = false;
+
         wail.muted = false;
         wail.play();
         c.fillStyle = 'black';
