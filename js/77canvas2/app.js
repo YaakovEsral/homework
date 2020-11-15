@@ -11,8 +11,11 @@
     
     improvements:
     -make snake grow each time
+        done!
     -get the score in its own spot
+        done!
     -sound for crashing into the wall
+        done!
     -maybe make a grid
     -make smooth motion that will only change direction on the grid squares
 
@@ -39,11 +42,18 @@
     snakeImg.src = 'media/snakehead.png';
     const appleImg = new Image();
     appleImg.src = 'media/apple.png';
+    const snakeBodyImg = new Image();
+    snakeBodyImg.src = 'media/snakeBody.png';
 
     const chomp = document.createElement('audio');
     chomp.src = 'media/chomp.mp3';
+    chomp.muted = true;
     const wail = document.createElement('audio');
     wail.src = 'media/wail.mp3';
+    wail.muted = 'muted';
+    const geshmak = document.createElement('audio');
+    geshmak.src = 'media/geshmak.mp3';
+    chomp.muted = true;
 
     let gameOn = false;
 
@@ -51,7 +61,9 @@
     let snakeY;
     let snakeXunit;
     let snakeYunit;
-    
+
+    let snakeParts = [];
+    // snakeParts.body = [];
 
     let appleX;
     let appleY;
@@ -98,10 +110,19 @@
     });
 
     function startGame() {
-        snakeX = 0;
-        snakeY = UNIT;
+        // snakeX = 0;
+        // snakeY = UNIT;
         snakeXunit = UNIT;
         snakeYunit = 0;
+
+        snakeParts = [];
+
+        snakeParts[0] = {
+            part: 'head',
+            img: snakeImg,
+            x: 0,
+            y: UNIT
+        };
 
         newApplePosition();
         // repaint();
@@ -156,18 +177,29 @@
         c.fillRect(0, hudHeight, fieldWidth, fieldHeight);
 
         //when the snake hits the apple
-        if (snakeX === appleX && snakeY === appleY) {
+        if (snakeParts[0].x === appleX && snakeParts[0].y === appleY) {
             newApplePosition();
-            chomp.play();
+            geshmak.muted = false;
+            geshmak.play();
             score += SCORE_UNIT;
+
+            //add a body part
+            snakeParts.push({
+                part: 'body',
+                img: snakeBodyImg,
+                // x: snakeParts[snakeParts.length - 1].x,
+                // y: snakeParts[snakeParts.length - 1].y
+                x: undefined,
+                y: undefined
+            });
         }
 
         //when the snake hits a wall
         if (
-            snakeX < 0 ||
-            snakeX > fieldWidth ||
-            snakeY < UNIT ||
-            snakeY > fieldWidth + UNIT) {
+            snakeParts[0].x < 0 ||
+            snakeParts[0].x > fieldWidth ||
+            snakeParts[0].y < UNIT ||
+            snakeParts[0].y > fieldHeight + UNIT) {
             c.strokeStyle = 'red';
             c.lineWidth = 6;
             c.strokeRect(0, UNIT, fieldWidth, fieldHeight);
@@ -175,18 +207,16 @@
             // const gameOverText = `
             // GAME OVER \n Final Score: ${score}
             // `;
-            wail.play();
-            c.fillStyle = 'black';
-            c.font = 'bold 70px fantasy';
-            c.fillText('GAME OVER', canvas.width / 3, canvas.height / 2.5);
-            c.fillText(`Final Score: ${score}`, canvas.width / 3.3, canvas.height / 2);
-            gameOn = false;
-
-            setTimeout(() => {
-                buttonDiv.classList.remove('hidden');
-            }, 1000);
-
+            endGame();
         }
+
+        //if the snake hits itself
+            for (let i = 1; i < snakeParts.length; i++) {
+                if (snakeParts[0].x === snakeParts[i].x &&
+                    snakeParts[0].y === snakeParts[i].y) {
+                    endGame();
+                }
+            }
 
         c.drawImage(appleImg, appleX, appleY, UNIT, UNIT);
 
@@ -222,9 +252,37 @@
     }
 
     function drawSnake() {
-        c.drawImage(snakeImg, snakeX, snakeY, UNIT, UNIT);
-        snakeX += snakeXunit;
-        snakeY += snakeYunit;
+
+        if (snakeParts.length > 1) {
+            //update all snake parts position
+            for (let i = snakeParts.length - 1; i > 0; i--) {
+                snakeParts[i].x = snakeParts[i - 1].x;
+                snakeParts[i].y = snakeParts[i - 1].y;
+            }
+
+            for (let i = 1; i < snakeParts.length; i++) {
+                c.drawImage(snakeParts[i].img, snakeParts[i].x, snakeParts[i].y, UNIT, UNIT);
+            }
+        }
+        snakeParts[0].x += snakeXunit;
+        snakeParts[0].y += snakeYunit;
+
+        c.drawImage(snakeImg, snakeParts[0].x, snakeParts[0].y, UNIT, UNIT);
+
+    }
+
+    function endGame() {
+        wail.muted = false;
+        wail.play();
+        c.fillStyle = 'black';
+        c.font = 'bold 70px fantasy';
+        c.fillText('GAME OVER', canvas.width / 3, canvas.height / 2.5);
+        c.fillText(`Final Score: ${score}`, canvas.width / 3.3, canvas.height / 2);
+        gameOn = false;
+
+        setTimeout(() => {
+            buttonDiv.classList.remove('hidden');
+        }, 1000);
     }
 
     //enable user to play again
