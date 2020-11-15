@@ -180,6 +180,10 @@
         c.fillStyle = 'lightgreen';
         c.fillRect(0, hudHeight, fieldWidth, fieldHeight);
 
+        c.drawImage(appleImg, appleX, appleY, UNIT, UNIT);
+
+        drawSnake();
+
         //when the snake hits the apple
         if (snakeParts[0].x === appleX && snakeParts[0].y === appleY) {
             newApplePosition();
@@ -215,16 +219,12 @@
         }
 
         //if the snake hits itself
-            for (let i = 1; i < snakeParts.length; i++) {
-                if (snakeParts[0].x === snakeParts[i].x &&
-                    snakeParts[0].y === snakeParts[i].y) {
-                    endGame();
-                }
+        for (let i = 1; i < snakeParts.length; i++) {
+            if (snakeParts[0].x === snakeParts[i].x &&
+                snakeParts[0].y === snakeParts[i].y) {
+                endGame();
             }
-
-        c.drawImage(appleImg, appleX, appleY, UNIT, UNIT);
-
-        drawSnake();
+        }
     }
 
     document.addEventListener('keydown', (e) => {
@@ -249,8 +249,16 @@
     });
 
     function newApplePosition() {
-        const x = Math.floor((Math.random() * (fieldWidth / UNIT)));
-        const y = Math.floor((Math.random() * fieldHeight / UNIT));
+        let spotOccupied = true;
+        let x;
+        let y;
+
+        while (spotOccupied) {
+            x = Math.floor((Math.random() * (fieldWidth / UNIT)));
+            y = Math.floor((Math.random() * fieldHeight / UNIT));
+            spotOccupied = snakeParts.some(part => part.x === x && part.y === y); //jshint ignore: line
+
+        }
         appleX = x * UNIT;
         appleY = (y * UNIT) + UNIT;
     }
