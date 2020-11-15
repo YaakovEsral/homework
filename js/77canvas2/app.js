@@ -165,26 +165,7 @@
     }
 
     function repaint() {
-        //hud styling
-        c.fillStyle = '#81e2ef';
-        c.fillRect(0, 0, hudWidth, hudHeight);
-
-        c.strokeStyle = 'cadetblue';
-        c.lineWidth = 8;
-        c.strokeRect(0, 0, hudWidth, hudHeight);
-
-        //hud content
-        c.fillStyle = 'darkgreen';
-        c.font = '48px fantasy';
-        c.fillText(`The Snake Game`, 50, 50);
-
-        c.fillStyle = 'darkgreen';
-        c.font = '48px fantasy';
-        c.fillText(`Score: ${score}`, hudWidth - 250, 50);
-
-        //field styling
-        c.fillStyle = '#98e262';
-        c.fillRect(0, hudHeight, fieldWidth, fieldHeight);
+        drawMainDisplay();
 
         c.drawImage(appleImg, appleX, appleY, UNIT, UNIT);
 
@@ -195,7 +176,6 @@
             c.font = '50px fantasy';
             c.fillText('QUICK SCORE!', canvas.width / 3, canvas.height / 3.3);
             c.fillText(`BONUS ${SCORE_BONUS} POINTS`, canvas.width / 3.3, canvas.height / 2.5);
-    
         }
 
 
@@ -282,9 +262,31 @@
         }
     });
 
+    function drawMainDisplay() {
+        //hud styling
+        c.fillStyle = '#81e2ef';
+        c.fillRect(0, 0, hudWidth, hudHeight);
+
+        c.strokeStyle = 'cadetblue';
+        c.lineWidth = 8;
+        c.strokeRect(0, 0, hudWidth, hudHeight);
+
+        //hud content
+        c.fillStyle = 'darkgreen';
+        c.font = '48px fantasy';
+        c.fillText(`The Snake Game`, 50, 50);
+
+        c.fillStyle = 'darkgreen';
+        c.font = '48px fantasy';
+        c.fillText(`Score: ${score}`, hudWidth - 250, 50);
+
+        //field styling
+        c.fillStyle = '#98e262';
+        c.fillRect(0, hudHeight, fieldWidth, fieldHeight);
+
+    }
+
     function newApplePosition() {
-
-
         let spotOccupied = true;
         let x;
         let y;
@@ -329,6 +331,10 @@
         c.fillText('GAME OVER', canvas.width / 3, canvas.height / 3.3);
         c.fillText(`Final Score: ${score}`, canvas.width / 3.3, canvas.height / 2.5);
         gameOn = false;
+        drawMainDisplay();
+        c.drawImage(appleImg, appleX, appleY, UNIT, UNIT);
+        drawSnake();
+
 
         setTimeout(() => {
             buttonDiv.classList.remove('hidden');
