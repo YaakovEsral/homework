@@ -160,7 +160,7 @@
 
     function repaint() {
         //hud styling
-        c.fillStyle = 'lightblue';
+        c.fillStyle = '#81e2ef';
         c.fillRect(0, 0, hudWidth, hudHeight);
 
         c.strokeStyle = 'cadetblue';
@@ -177,7 +177,7 @@
         c.fillText(`Score: ${score}`, hudWidth - 250, 50);
 
         //field styling
-        c.fillStyle = 'lightgreen';
+        c.fillStyle = '#98e262';
         c.fillRect(0, hudHeight, fieldWidth, fieldHeight);
 
         c.drawImage(appleImg, appleX, appleY, UNIT, UNIT);
@@ -208,7 +208,7 @@
             snakeParts[0].x > fieldWidth ||
             snakeParts[0].y < UNIT ||
             snakeParts[0].y > fieldHeight + UNIT) {
-            c.strokeStyle = 'red';
+            c.strokeStyle = '#e41d1d';
             c.lineWidth = 6;
             c.strokeRect(0, UNIT, fieldWidth, fieldHeight);
 
@@ -288,8 +288,8 @@
         wail.play();
         c.fillStyle = 'black';
         c.font = 'bold 70px fantasy';
-        c.fillText('GAME OVER', canvas.width / 3, canvas.height / 2.5);
-        c.fillText(`Final Score: ${score}`, canvas.width / 3.3, canvas.height / 2);
+        c.fillText('GAME OVER', canvas.width / 3, canvas.height / 3.3);
+        c.fillText(`Final Score: ${score}`, canvas.width / 3.3, canvas.height / 2.5);
         gameOn = false;
 
         setTimeout(() => {
@@ -305,7 +305,7 @@
 
     quitBtn.addEventListener('click', () => {
         buttonDiv.classList.add('hidden');
-        c.fillStyle = 'lightgreen';
+        c.fillStyle = '#98e262';
         c.fillRect(0, hudHeight, fieldWidth, fieldHeight);
 
         c.fillStyle = 'black';
