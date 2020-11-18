@@ -5,55 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
-    <style>
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
-
-        body {
-            text-align: center;
-            position: relative;
-        }
-
-        canvas {
-            margin: auto;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        #buttonDiv {
-            position: absolute;
-            top: 40%;
-            left: 0;
-            right: 0;
-            text-align: center;
-        }
-
-        .btn1 {
-            color: #FDFDFD;
-            border-radius: 5px;
-            width: 185px;
-            height: 39px;
-            font-size: 18px;
-            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-            margin-bottom: 10px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        #playAgain {
-            background-color: #4d921b;
-        }
-
-        #noThanks {
-            background-color: #e41d1d;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -61,8 +13,26 @@
     <!-- <audio id="chomp" src="media/chomp.mp3"></audio> -->
     <div id="buttonDiv" class="hidden">
         <button id="playAgain" class="btn1">Play Again</button>
-        <br>
-        <button id="noThanks" class="btn1">No, Thanks</button>
+        <button id="openHighScoreForm" class="btn1">Save High Score</button>
+        <button id="viewHighScores" class="btn1">View High Scores</button>
+        <button id="noThanks" class="btn1">Quit</button>
+    </div>
+
+    <div id="highScoreBox" class="hidden popupBox">
+        <form id="saveScoreForm">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="username">
+            </div>
+            <button id="saveScore" class="btn1" disabled>Save Score</button>
+        </form>
+        <button id="quitSaveScoreForm" class="btn1">Quit</button>
+    </div>
+
+    <div id="highScoreDisplay" class="hidden popupBox">
+        <h2>High Scores</h2>
+        <ol id="highScoresList"></ol>
+        <button id="quitHighScores" class="btn1">Quit</button>
     </div>
     <canvas id="theCanvas"></canvas>
     <script src="app.js"></script>
