@@ -74,7 +74,8 @@ section {
 img, video {
     /* slight issues with height, but we will let it fill/cover for now */
     /* height: 220px; */
-    object-fit: cover;
+    /* object-fit: cover; */
+    width: 100%;
 }
 
 .media-single {

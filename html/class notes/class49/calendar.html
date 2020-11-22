@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    main {
+        max-width: 1080px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: auto;
+        grid-auto-rows: minmax(75px, 125px);
+        border: 2px black solid;
+    }
+
+    div {
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        padding-right: 10px;
+    }
+
+    .names{
+        /* Initially used when all names were in one box */
+        /* grid-column: 1 / 8; */
+        /* alternatively: */
+        /* grid-column: span 7; */
+        display: flex;
+        justify-content: center;
+        height: 20px;
+    }
+
+    .non-day {
+        background-color: #aaadab;
+    }
+
+
+    div:nth-child(7n):not(.names){
+        background-color: gold;
+    }
+
+    .day:nth-child(15n-2){
+        background-color: rgb(57, 211, 57)!important;
+    }
+    .end {
+        grid-column: span 4;
+    }
+</style>
+
+<body>
+    <h1>June 2020</h1>
+    <main>
+        <div class="names">Sunday</div>
+        <div class="names">Monday</div>
+        <div class="names">Tuesday</div>
+        <div class="names">Wednesday</div>
+        <div class="names">Thursday</div>
+        <div class="names">Friday</div>
+        <div class="names">Shabbos</div>
+        <div class="non-day"></div>
+        <div class="day">1</div>
+        <div class="day">2</div>
+        <div class="day">3</div>
+        <div class="day">4</div>
+        <div class="day">5</div>
+        <div class="day">6</div>
+        <div class="day">7</div>
+        <div class="day">8</div>
+        <div class="day">9</div>
+        <div class="day">10</div>
+        <div class="day">11</div>
+        <div class="day">12</div>
+        <div class="day">13</div>
+        <div class="day">14</div>
+        <div class="day">15</div>
+        <div class="day">16</div>
+        <div class="day">17</div>
+        <div class="day">18</div>
+        <div class="day">19</div>
+        <div class="day">20</div>
+        <div class="day">21</div>
+        <div class="day">22</div>
+        <div class="day">23</div>
+        <div class="day">24</div>
+        <div class="day">25</div>
+        <div class="day">26</div>
+        <div class="day">27</div>
+        <div class="day">28</div>
+        <div class="day">29</div>
+        <div class="day">30</div>
+
+        <div class="non-day end"></div>
+    </main>
+</body>
+
+</html>

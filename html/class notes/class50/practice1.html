@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-rows: repeat(5, 1fr);
+        }
+
+        body * {
+            grid-column: 2 / 3;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            list-style-position: inside;
+            text-align: left;
+        }
+
+        article {
+            grid-row: span 3;
+        }
+
+        @media screen and (min-width: 300px) {
+            nav ul {
+                list-style-type: none;
+                flex-direction: row;
+                justify-content: space-evenly;
+                
+            }
+            
+            article {
+                grid-row: span 2;
+            }
+        }
+
+        @media screen and (min-width: 500px) {
+            body{
+                grid-template-columns: 1fr 4fr 2fr 1fr;
+                grid-template-rows: 1fr 1fr 2fr 1fr;
+            }
+
+            aside, div {
+                grid-column: 3 / 4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Products</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Music</h1>
+    <article><strong>Article</strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat a sit porro
+        asperiores esse id, unde
+        veritatis maxime quos aspernatur commodi aut beatae quis voluptate atque possimus. Rem saepe nobis reprehenderit
+        non quo, repellat expedita sequi voluptas magni laudantium corporis!</article>
+
+    <aside><strong>Aside</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit exercitationem
+        aperiam eaque
+        laudantium alias in hic nulla cumque itaque sint.</aside>
+
+    <div>Ad goes here</div>
+
+    <footer>
+        <h3>&copy; Musicology 2020</h3>
+        <p>No part of this work may be reproduced by any means.</p>
+    </footer>
+</body>
+
+</html>

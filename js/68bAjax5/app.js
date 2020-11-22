@@ -1,5 +1,3 @@
-// https://openweathermap.org/weather-conditions
-
 (function () {
     'use strict';
     function get(id) {
@@ -14,10 +12,9 @@
 
     const localeWeatherInfo = get('localeWeatherInfo');
     const zmanimInfo = get('zmanimInfo');
-    // const form = get('form');
+    const form = get('form');
     const dropdownOptions = get('dropdownOptions');
     const textInput = get('textInput');
-    // const weatherBtn = get('weatherBtn');
     const latLongInputs = document.getElementsByClassName('latLongInput');
 
     let lat, long;
@@ -25,32 +22,35 @@
     let weatherData;
     let zmanimData;
 
+    //retrieve info about current location once page is ready
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         setTimeout(findGeo, 1);
     } else {
         document.addEventListener('DOMContentLoaded', findGeo);
     }
 
+    //change inputs when user selects lat long
     dropdownOptions.addEventListener('change', () => {
-        console.log(latLongInputs);
         for (let i = 0; i < latLongInputs.length; i++) {
-            
+            latLongInputs[i].required = dropdownOptions.value === 'latLong';
             latLongInputs[i].hidden = dropdownOptions.value !== 'latLong';
-            // latLongInputs[i].style.display = 'none';
-            // latLongInputs[i].style.display = true;
         }
+        textInput.required = dropdownOptions.value !== 'latLong';
         textInput.hidden = dropdownOptions.value === 'latLong';
     });
 
-    // weatherBtn.addEventListener('click', findGeo);
-    // form.onsubmit = (e =>{
-    //     e.preventDefault();
-    //     console.log('form submitted');
-    // });
+    
+    form.onsubmit = (e =>{
+        e.preventDefault();
+        alert('I refuse to make this form work until I get a pay raise!');
+        console.log('form submitted');
+    });
 
+    //find lat long coordinates using javascript - if successful, fetch additional data:
+    //location specs, weather, and zmanim data
     function findGeo() {
         if (!navigator.geolocation) {
-            console.log('Sorry, your browser doesn\'t support geolocation.');
+            alert('Sorry, your browser doesn\'t support geolocation.');
         } else {
             navigator.geolocation.getCurrentPosition(success, failure);
         }
@@ -78,6 +78,7 @@
 
     }
 
+    //perform the fetch - we are returning a fetch so they can be done aynchronously (see stackoverflow)
     function executeFetch(url) {
         return fetch(url)
             .then(r => {
@@ -95,11 +96,11 @@
             });
     }
 
+    //append the retrieved data to the HTML
     function appendData(locationData, weatherData, zmanimData) {
         const a = locationData.address;
         const now = new Date();
         spinners.forEach(elem => elem.classList.add('hidden'));
-        // classList.add('hidden');
         const weatherHeader = '<h3>Weather:</h3>';
         localeWeatherInfo.innerHTML += weatherHeader;
         localeWeatherInfo.innerHTML += (`<p>Displaying info for ${a.city}, ${a.state} on ${now.toLocaleString()}.</p>`);
@@ -107,7 +108,6 @@
         let weatherDataArray = [];
         weatherDataArray.push({ key: 'Temperature', val: weatherData.main.temp + ' F' });
         weatherDataArray.push({ key: 'Feels like', val: weatherData.main.feels_like + ' F' });
-        // dataArray.push({key: 'Location', val: weatherData.name});
         weatherDataArray.push({ key: 'Description', val: weatherData.weather[0].description });
         weatherDataArray.push({ key: 'Wind Speed', val: weatherData.wind.speed });
 
@@ -119,7 +119,6 @@
         localeWeatherInfo.innerHTML += '<br>';
 
         let zmanimDataArray = [];
-
         zmanimDataArray.push({ key: 'Alos 16.1\u00B0', val: zmanimData.Alos16point1Degrees });
         zmanimDataArray.push({ key: 'Sunrise', val: zmanimData.Sunrise });
         zmanimDataArray.push({ key: 'Sof Zman Krias Shema (Gra)', val: zmanimData.SofZmanShemaGra });

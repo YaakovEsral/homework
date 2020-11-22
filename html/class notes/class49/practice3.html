@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div:nth-child(even){
+            background-color: lightgreen;
+        }
+
+        div:nth-child(odd){
+            background-color: lightsteelblue;
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: repeat(3, 100px);
+
+            grid-auto-flow: column;
+            gap: 2em;
+
+            grid-auto-columns: 150px;
+
+            grid-template-columns: repeat(auto-fit,
+            minmax(100px, 1fr));
+
+            /* packs in boxes where they fit */
+            grid-auto-flow: dense;
+
+        }
+
+        div:nth-child(4){
+            order: -1;
+        }
+
+        div:nth-child(even){
+            grid-column-start: span 2;
+            grid-column-end: span 2;;
+        }
+
+        div:nth-child(7){
+            /* grid-column-start: 2;
+            grid-column-end: 4; */
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+
+</body>
+</html>

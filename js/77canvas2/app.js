@@ -112,23 +112,7 @@ const highScoresList = get('highScoresList');
 const quitHighScores = get('quitHighScores');
 const quitBtn = get('noThanks');
 
-//code to determine how the regTime(chomp);
-// chomp.onloadedmetadata = logTime(chomp);
-// chomp.onloadeddata = logTime(chomp);
-// chomp.onprogress = logTime(chomp);
-// chomp.oncanplay = logTime(chomp);
-// chomp.oncanplaythrough = logTime(chomp);
 
-// function logTime(file) {
-//     console.log('ready state', file.readyState, now.getMilliseconds());
-// }
-
-// const int = setInterval(() =>{
-//     console.log('ready state', chomp.readyState, now.getMilliseconds());
-//     if(chomp.readyState === 4) {
-//         clearInterval(int);
-//     }
-// },5);
 
 snakeImg.addEventListener('load', () => {
     appleImg.addEventListener('load', () => {
@@ -418,7 +402,7 @@ saveScoreForm.addEventListener('submit', (e) => {
     e.preventDefault();
     saveScoreBtn.disabled = true;
     hide(highScoreBox);
-    show(buttonDiv);
+    // show(buttonDiv);
     hide(openHighScoreFormBtn);
     show(highScoreDisplay);
     highScores.push({ name: usernameInput.value, score: score });

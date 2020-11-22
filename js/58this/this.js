@@ -3,6 +3,9 @@ window.bank = window.bank || {};
 window.bank.account = (function (account) {
     'use strict';
 
+    //without strict mode, 'this' is the window by default
+    //with strict mode, 'this' is undefined by default
+
     account = {
         balance: 0,
         performTransaction: function (amount) {

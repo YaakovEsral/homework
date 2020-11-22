@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    $('#theButton').click(() =>{
+    $('#theButton').on('click',() =>{
         $('#theDiv').css('backgroundColor', 'green');
     });
 }());

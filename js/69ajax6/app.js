@@ -60,10 +60,10 @@
                         position: { lat: item.lat, lng: item.lng },
                         map: map,
                         title: item.title,
-                        icon: {
+                        icon: item.thumbnailImg ? {
                             url: item.thumbnailImg,
                             scaledSize: new google.maps.Size(45, 45)
-                        }
+                        } : null
                     });
                     markers.push(marker);
                     bounds.extend(marker.position);

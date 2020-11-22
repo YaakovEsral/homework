@@ -4,6 +4,7 @@
 
     submit.click(() => {
         const radioButtons = $('input');
+        console.log(radioButtons);
         let selectedIndex;
         for (let i = 0; i < radioButtons.length; i++) {
             if (radioButtons[i].checked) {

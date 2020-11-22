@@ -42,7 +42,7 @@ header:not(.small-screen-header){
     height: 55px;
 }
 
-header nav:not(.small-screen-header) *{
+header nav *{
    /* fixed the issues! there wasn't enough specificity in the selectors,
    so I added the asterisk(*) */
     font-size: 36px;
@@ -51,7 +51,7 @@ header nav:not(.small-screen-header) *{
     margin: 0;
 }
 
-header>nav:not(.small-screen-header){
+header:not(.small-screen-header) nav{
     margin-left: 3%;
     width: 30%;
     /* height: 55px; */
@@ -91,7 +91,7 @@ h1.rest-name{
 
 .small-screen-header{
     display: none;
-    background-color: #399058;
+    /* background-color: #399058; */
     text-align: center;
     width: fit-content;
     margin: auto;

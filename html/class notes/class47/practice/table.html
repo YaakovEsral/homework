@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            text-align: center;
+            width: 800px;      
+        } 
+        td, th{
+            border: 1px solid black;
+            padding: 2em;
+            text-align: center;
+        }
+
+        table, thead{
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+
+        tr:nth-child(2n), th{
+            background-color: lightblue;
+        }
+
+        td:hover, th:hover{
+            background-color: paleturquoise;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Song Name</th>
+                <th>Artist</th>
+                <th>Key</th>
+                <th>Style</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anavim</td>
+                <td>Yossi Green</td>
+                <td>Am</td>
+                <td>Kumsitz</td>
+            </tr>
+            <tr>
+                <td>Lashuv Habaita</td>
+                <td>Ishay Ribo</td>
+                <td>C</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Kol Berama</td>
+                <td>Abie Rotenberg</td>
+                <td>Gm</td>
+                <td>Kumsitz</td>
+            </tr>
+            <tr>
+                <td>Et Rekod</td>
+                <td>Yaakov Shwekey</td>
+                <td>F#m</td>
+                <td>Fast</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

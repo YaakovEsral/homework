@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <title>Weather and Zmanim</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,28 +15,33 @@
 
         </div>
 
+        <form id="form">
+            <h3>Retrieve info for a different location:</h3>
+            <select id="dropdownOptions">
+                <option value="city">City</option>
+                <option value="zip">Zip code</option>
+                <option value="latLong">Lat and Long</option>
+            </select>
+            <input type="text" id="textInput">
+            <input type="text" id="latInput" class="latLongInput" size="3" maxlength="3" placeholder="Lat" hidden>
+            <input type="text" id="longInput" class="latLongInput" size="4" maxlength="4" placeholder="Long" hidden>
+            <button class="btn" id="weatherBtn">Get Info</button>
+        </form>
+
         <div id="localInfo">
-            <h2>Info For Your Location</h2>
+            <h2>Info For Your Current Location</h2>
             <div id="localeWeatherInfo">
-                <img class="spinner" src="media/spinner.png">
+                <img class="spinner" src="media/spinner4.png">
             </div>
 
             <div id="zmanimInfo">
                 <img class="spinner" src="media/spinner3.png">
             </div>
         </div>
-        <form id="form">
-            <h3>Retrieve info for a different location:</h3>
-            <select id="dropdownOptions">
-                <option value="city">City</option>
-                <option value="zip">Zip code</option>
-                <option value="latLong">Latitude and Longitude</option>
-            </select>
-            <input type="text" id="textInput" required>
-            <input type="text" id="latInput" class="latLongInput" size="3" maxlength="3" placeholder="Lat" hidden>
-            <input type="text" id="longInput" class="latLongInput" size="4" maxlength="4" placeholder="Long" hidden>
-            <button class="btn" id="weatherBtn">Get Weather</button>
-        </form>
+
+        <div id="results">
+
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

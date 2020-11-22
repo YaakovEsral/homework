@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            background-color: black;
+        }
+
+        body {
+            background-color: white;
+            width: 80%;
+            margin: auto;
+            padding: 10px;
+        }
+
+        input:not([type="submit"]):not([type="color"]),
+        textarea {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: .5em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form method="POST">
+        <label for="first">First Name: </label>
+        <input id="first" type="text" name="firstName" placeholder="Enter your first name" value="Yaakov">
+
+        <label for="last">Last Name: </label>
+        <input id="last" type="text" name="lastName" placeholder="Enter your last name">
+
+        <label for="pass">Password:</label>
+        <input id="pass" type="password" name="pwd" placeholder="Enter your password" required minlength="3"
+            maxlength="6" value="test">
+
+
+        <label for="age">Age:</label>
+        <input id="age" type="number" name="age" min="0" max="120" step=".5" required value="23">
+
+
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email">
+
+        <label for="rating">Rating:</label>
+        <input id="rating" type="range" name="rating" min="1" max="20">
+
+        <label for="color">Favorite color:</label>
+        <input id="color" type="color" name="color">
+
+
+        <br><br>
+        <label for="comment">Comment:</label>
+        <textarea id="comment" type="text" name="comment"></textarea>
+
+        <br><br>
+
+        <label for="poll">Do you think Trump will win reelection?</label>
+        <input type="radio" id="poll" name="poll" value="yes">Yes
+        <input type="radio" id="poll" name="poll" value="no">No
+        <input type="radio" id="poll" name="poll" value="maybe">Maybe
+
+        <label for="sides">Pick your sides</label>
+        <input type="checkbox" id="sides" name="sides">Fries
+        <input type="checkbox" id="sides" name="sides">Onion Rings
+        <input type="checkbox" id="sides" name="sides">Rice
+
+        <label for="drink">Pick a drink:</label>
+        <select name="drink" id="drink" multiple>
+            <option>Coke</option>
+            <option>Pepsi</option>
+            <option>7UP</option>
+        </select>
+
+
+
+        <input type="submit" value="Register">
+        <input type="reset">
+    </form>
+
+
+</body>
+
+</html>

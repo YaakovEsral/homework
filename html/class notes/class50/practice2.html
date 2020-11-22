@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @media screen and (min-width: 500px) {
+            body {
+                display: grid;
+                grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
+                grid-template-columns: 1fr;
+                gap: 2em;
+            }
+
+            nav {
+                /* grid-row: 1; */
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+            }
+
+            h1 {
+                /* grid-row: 2; */
+            }
+
+            article {
+                /* grid-row: 3; */
+            }
+
+            ad {
+                /* grid-row: 4; */
+            }
+
+            aside {
+                /* grid-row: 5; */
+            }
+        }
+
+        @media screen and (min-width: 700px) {
+            body {
+                display: grid;
+                grid: 1fr 1fr 3fr 1fr 1fr / 1fr 1fr;
+                gap: 2em;
+            }
+
+            nav {
+                grid-row: 1;
+            }
+
+            nav ul {
+                flex-direction: row;
+            }
+
+            h1 {
+                grid-row: 2;
+            }
+
+            article {
+                grid-row: 3;
+            }
+
+            ad {
+                grid-row: 4;
+            }
+
+            aside {
+                grid-row: 5;
+            }
+
+            body * {
+                grid-column: span 2;
+            }
+        }
+
+        @media screen and (min-width: 900px){
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Products</li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>The Topic of this Page</h1>
+    <article>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga soluta vel voluptatibus accusantium
+        pariatur repudiandae quisquam culpa debitis corporis. Dolor voluptatibus possimus quas reprehenderit, provident
+        voluptates nesciunt unde totam et minus enim ex eos libero. Laborum pariatur assumenda sint quod suscipit! Nam
+        consequatur voluptatem repudiandae facere assumenda aspernatur repellendus sapiente mollitia impedit expedita
+        iusto sed excepturi, praesentium beatae aperiam non, neque tempore quaerat. Ea accusantium quisquam, magni
+        facilis cum assumenda dolorem odit, sunt cumque, eligendi sint at. Vero accusamus labore, praesentium, dolorum
+        iusto laudantium molestias similique eos quod officiis a ea? Quibusdam reiciendis eveniet molestiae id,
+        voluptatum non reprehenderit accusantium numquam minus nam quae voluptatibus ea similique eligendi animi
+        molestias itaque nulla quas, optio neque dolorem obcaecati sed facilis quos. Ducimus rem ut aliquam voluptates
+        optio sunt nisi veritatis nobis doloribus eum. Magni, non harum! Minus sequi, quas excepturi dignissimos dolor
+        aliquam corrupti. Dolores quam quos error consequatur rem quibusdam maxime at sunt similique amet deleniti illo
+        necessitatibus molestiae distinctio, laudantium praesentium tempora quisquam iste facilis maiores? Placeat
+        accusamus, iure excepturi eligendi veritatis nisi aperiam odit cum accusantium mollitia iste similique modi
+        possimus amet repudiandae nobis? Aliquam dolores harum nulla? Est error dicta sapiente officia necessitatibus
+        deleniti dolore enim!</article>
+
+    <ad>Please buy this product!</ad>
+
+    <aside>Just as an aside... Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat quia culpa obcaecati
+        eligendi commodi sit magni dolorem, voluptate vel odio facilis, quas ratione. Fugiat mollitia itaque voluptates
+        quia cumque eveniet!</aside>
+</body>
+
+</html>

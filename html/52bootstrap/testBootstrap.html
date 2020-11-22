@@ -11,6 +11,16 @@
         body {
             padding: 3em 0;
         }
+
+        #products figure {
+            border-color: transparent !important;
+        }
+
+        @media screen and (min-width: 992px) {
+            #products figure {
+                border-color: #dee2e6 !important;
+            }
+        }
     </style>
 </head>
 
@@ -43,7 +53,7 @@
             quos?</p>
 
         <div class="figures row">
-            <figure class="col-lg-4">
+            <figure class="col-lg-4 border-right">
                 <h2>Computers</h2>
                 <img class="w-100" src="media/macworld.jpg" alt="computers">
                 <figcaption>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore cupiditate, tenetur
@@ -52,7 +62,7 @@
                     ducimus.</figcaption>
             </figure>
 
-            <figure class="col-lg-4">
+            <figure class="col-lg-4 border-right">
                 <h2>Chiors</h2>
                 <video class="w-100" src="media/El Hanaar Hazeh.mp4" poster="media/shira.png" controls></video>
                 <figcaption>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore cupiditate, tenetur
@@ -73,16 +83,22 @@
         </div>
     </section>
 
-    <section class="jumbotron form-inline-block text-center" id="signUp">
+    <section class="jumbotron text-center" id="signUp">
         <h2>Sign Me Up!</h2>
 
         <!-- <div class="justify-content-center"> -->
-            <form action="signup.php" method="post">
-                <label>Name: &nbsp;<input name="name" placeholder="Your Name" required></label>
-                <label>Email: &nbsp;<input type="email" name="email" placeholder="Your Email" required></label>
-
-                <input type="submit" value="Sign Me Up!" />
-            </form>
+        <form action="signup.php" class="justify-content-center form-inline" method="post">
+            <div class="form-group mr-2">
+                <label>Name: &nbsp;<input class="form-control" name="name" placeholder="Your Name" required></label>
+            </div>
+            <div class="form-group mr-2">
+                <label>Email: &nbsp;<input class="form-control" type="email" name="email" placeholder="Your Email"
+                        required></label>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success">Sign Me Up!</button>
+            </div>
+        </form>
         <!-- </div> -->
     </section>
 
@@ -90,8 +106,8 @@
         <h2>Financials</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error libero tempore cupiditate temporibus eveniet
             eum?</p>
-        <div class="tablescroll">
-            <table class="table table-striped table-bordered table-hover">
+        <div class="row">
+            <table class="table table-striped table-bordered table-hover col-lg-10 offset-lg-1">
                 <caption>Profits By Quarter</caption>
 
                 <thead>

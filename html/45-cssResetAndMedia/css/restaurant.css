@@ -232,5 +232,6 @@ audio, video{
     box-sizing: border-box;
 }
 .sm_icon:hover{
-    height: 70px;
+    /* height: 70px; */
+    transform: scale(1.2);
 }

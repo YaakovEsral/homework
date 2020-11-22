@@ -3,7 +3,7 @@
     /* global pcs */
     'use strict';
 
-    $('#loadBar').hide();
+    // $('#loadBar').hide();
 
     $('form').submit((e) => {
 

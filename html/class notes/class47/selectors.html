@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        section {
+            color: red;
+        }
+
+        #theH1 {
+            font-style: italic;
+        }
+
+        .special {
+            font-weight: bold;
+        }
+
+        section,
+        p {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        /* section that IS A special class */
+        section.special {
+            background-color: lightblue;
+        }
+
+        /* section that HAS A (contains) element with a special class */
+        section .special {
+            border: 1px solid green;
+        }
+
+        section *{
+            transform: rotate(7deg);
+        }
+
+        /* immediate child only */
+        section>p{
+
+        }
+
+        /* p that follows a section */
+        section+p{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="theH1">CSS Selectors</h1>
+    <article>
+        <section class="special">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati eligendi at tempora
+            sapiente
+            doloribus ea excepturi quisquam mollitia hic ut ipsa nam quidem vero commodi ratione voluptatem et, saepe
+            voluptatum unde deserunt facilis molestias. Voluptatum quibusdam eligendi esse ratione amet consequuntur
+            minima. Perspiciatis quam, vitae sed dolorem similique asperiores voluptatibus officiis minus sequi
+            repellendus rem, minima deserunt at autem sit incidunt sunt aperiam velit laborum non accusantium dolores
+            ullam enim? Delectus accusamus deleniti, provident distinctio voluptatem cupiditate tempora porro quam
+            nostrum explicabo. Quia esse, odit porro deserunt tempora error doloremque incidunt nisi magni culpa!
+            Adipisci aliquam perspiciatis molestiae debitis expedita.</section>
+        <section>Temporibus praesentium quisquam aliquam inventore incidunt cupiditate recusandae ipsam. Qui error
+            incidunt mollitia odit, atque impedit, explicabo quam quis totam unde commodi sit quidem sapiente ducimus at
+            facilis cumque, veritatis laboriosam! Eligendi dolore quibusdam, quisquam laborum eos consequuntur id totam
+            iure illo consequatur nobis officia iste laudantium sequi illum hic culpa atque repudiandae ea nemo et
+            dignissimos? Odio possimus fugit autem quidem consectetur mollitia necessitatibus reiciendis facere adipisci
+            eaque, at asperiores soluta suscipit, cumque quaerat voluptatibus hic? Consectetur maxime soluta dolor iste
+            sequi earum quibusdam saepe delectus nostrum ipsa, obcaecati reiciendis ullam culpa consequatur porro, sunt
+            deleniti numquam, odio nulla.</section>
+        <section>Quia facere cupiditate accusantium neque maxime molestiae recusandae itaque esse, vero mollitia labore,
+            culpa explicabo, eius perferendis repellat quidem id fugit molestias consequuntur! Doloribus earum
+            voluptatibus praesentium voluptates dolores nam odit suscipit provident, rerum maiores perspiciatis
+            voluptatum magni soluta doloremque laboriosam cumque. Modi consequatur deleniti fugiat! Sunt doloribus nisi
+            fuga dolorem, impedit sit beatae labore commodi suscipit. Et error cumque sequi porro deleniti corrupti sunt
+            magni voluptate voluptas alias impedit, perspiciatis distinctio commodi reprehenderit tempore facilis culpa
+            inventore nihil optio voluptatibus dolorem. Dolore, voluptatum. Doloremque nesciunt nemo tempora iure culpa
+            cum harum quasi optio, reiciendis eum vel debitis quod eaque?
+            <p class="special">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora fuga nobis voluptas voluptates, saepe
+                deleniti earum. Corporis, quasi quod voluptatum vero obcaecati ea! Modi doloribus temporibus incidunt
+                nulla aliquam. Voluptatum!</p>
+        </section>
+        <section>Culpa repudiandae facilis eveniet iure inventore deserunt natus veritatis animi eius magni quibusdam
+            nam assumenda odit alias porro autem amet, cupiditate nulla adipisci velit id eligendi dolore expedita
+            aliquam. Maxime accusantium ex perspiciatis earum! Corrupti est voluptatibus quia ullam, eum temporibus
+            dolore, facilis perspiciatis excepturi repellat necessitatibus tempora sit, vel odit voluptate? Similique
+            voluptate in eveniet laudantium hic itaque suscipit ullam enim aperiam nobis placeat ipsum excepturi animi
+            voluptas odio tempore, vitae unde. Suscipit, corporis soluta ipsum, sed id laborum aperiam consequuntur
+            consectetur eos molestias voluptatum ipsa doloremque aliquid expedita laboriosam eligendi autem
+            exercitationem dignissimos dolor earum commodi unde in?</section>
+        <section>Doloribus nihil architecto ullam tenetur recusandae! Ducimus, perferendis. Eum hic reprehenderit quod
+            odit assumenda. Animi, ducimus! Iure perspiciatis dicta delectus consequatur reiciendis? Qui corrupti ab
+            voluptatibus maxime non soluta excepturi illo dolorum earum accusamus ipsam deleniti, officiis, quaerat
+            veniam sequi, nulla in. Omnis cumque aliquid delectus dolorum ducimus ipsam totam odit inventore id
+            accusantium ratione, consequatur ullam nam unde repellat neque, quidem dicta nisi asperiores ab cupiditate
+            eligendi vitae. Explicabo fugit ipsam sit culpa, veritatis iste, dolore nisi laudantium libero, voluptates
+            cupiditate dolorem totam ab. Ut quod dicta dignissimos reiciendis libero earum repudiandae amet! Corrupti
+            saepe doloribus odio numquam expedita.</section>
+        <p class="special">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eum repellendus exercitationem
+            vero, est
+            mollitia nesciunt modi odio maiores laudantium perferendis doloremque quam officiis laboriosam quo quas cum
+            maxime repellat!</p>
+    </article>
+</body>
+
+</html>

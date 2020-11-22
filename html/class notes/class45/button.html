@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* method #1: using separate images */
+        /* .button{
+            background-image: url("redButton.png");
+            width: 236px;
+            height: 248px;
+        }
+
+        .button:hover{
+            background-image: url("pressButton.png");
+            cursor: pointer;
+        }
+
+        .button:active{
+            background-image: url("blueButton.png");
+        } */
+
+        /* method #2: using a sprite */
+         .button{
+            background-image: url("sprite.png");
+            width: 236px;
+            height: 248px;
+        }
+
+        .button:hover{
+            background-position-y: -248px;
+            cursor: pointer;
+        }
+
+        .button:active{
+            background-position-y: +248px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="button"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr minmax(min-content, 400px) 
+            1fr;
+        }
+
+        header, hr, img{
+            grid-column: 2;
+        }
+
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Responsive Page</h1>
+        <h2>Watch 2 levels of shrinking...</h2>
+    </header>
+    <hr>
+    <img  src="../../images/Black Men's Shoes.jpg" alt="">
+</body>
+
+</html>

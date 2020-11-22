@@ -30,3 +30,20 @@ Goals:
 
 Also:
 Did lots more CSS to fix the page - rgba background, font sizes, new bg image, formatting the form
+
+10:59 PM
+Goals:
+1. Refactor code so it's applicable to weather and zmanim - done!
+2. Spend time organizing Javascript - done!
+    put in some comments. could be would be helpful to organize appendData more, but whatever for now
+    Also, I'm not sure how clear I am on how returning a fetch works
+
+11:16 PM
+Goal:
+Spend time figuring out the CSS for the area under the form, i.e. how to add more content underneath
+    lots of frustration. CSS grid is not so poshut. maybe figure out how min-content and max-content
+    work, or consider another plan for the desired format (like have a separate container)
+
+Note: something's up with the form at the moment. would be nice to try to figure it out
+    - solved! the issue was the 'required' attribute on the lat long fields. they should only be required
+    when they are showing. this is a conditional statement that must be made in Javascript, not HTML.

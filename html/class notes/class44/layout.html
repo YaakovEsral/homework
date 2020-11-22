@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. best if your nav is around as long as your content */
+        /* nav {
+            float: left;
+            margin-right: 2em;
+            border-right: 2px solid black;
+            padding-right: 2em;
+        } */
+        
+        /* 2. modify the article instead of the nav */
+        /* nav {
+            float: left;
+        }
+
+        article {
+            margin-left: 9em;
+            padding-left: 2em;
+            border-left: 1px solid black;
+        } */
+
+        /* 3. using inline block */
+        nav{
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        article{
+            display: inline-block;
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ol>
+            <li>
+                <a href="#java">Java</a>
+                <ol>
+                    <li><a href="#java1">Part 1</a></li>
+                    <li><a href="#java2">Part 2</a></li>
+
+
+                </ol>
+            </li>
+
+            <li>
+                <a href="#html">HTML</a>
+                <ol>
+                    <li><a href="#html1">Part 1</a></li>
+                    <li><a href="#html2">Part 2</a></li>
+
+
+                </ol>
+            </li>
+
+            <li>
+                <a href="#js">JavaScript</a>
+                <ol>
+                    <li><a href="#js1">Part 1</a></li>
+                    <li><a href="#js2">Part 2</a></li>
+
+
+                </ol>
+            </li>
+        </ol>
+    </nav>
+    <!-- Comment in order to remove the whitespace so the pixel count fits
+-->
+    <article>
+        <section>
+            <h2 id="java">Java</h2>
+            <h3 id="java1">Part I</h3>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem accusamus commodi repellendus similique
+                libero doloribus magnam illo, accusantium totam quos veritatis ducimus quibusdam sit repellat quasi
+                delectus necessitatibus aspernatur temporibus eveniet fugit reprehenderit suscipit blanditiis! Tempore
+                perferendis architecto optio repudiandae dolore ullam distinctio vitae sapiente nesciunt ducimus
+                necessitatibus odit magni harum, obcaecati qui. Dolor non animi quia, adipisci tempore cum saepe
+                doloribus dolorum temporibus dolore dolorem necessitatibus est expedita facilis quaerat atque nam? At,
+                tempore odio. Id, quo eligendi. Excepturi illo, cupiditate porro sed facilis similique repellat
+                consequuntur totam non, laborum molestias aliquid obcaecati exercitationem? Nesciunt corrupti accusamus,
+                quo iure nulla assumenda? Nulla dolorem aliquam ipsam veniam et quidem explicabo delectus voluptates
+                totam consequuntur autem alias soluta sapiente, nam ad voluptate beatae ipsa? Maxime blanditiis magni
+                dolore numquam eius repellendus vel qui labore quaerat officia optio nemo a ab ratione facilis fugiat
+                esse cupiditate recusandae, in quis quo repudiandae ipsum! Soluta animi magni, hic amet ab quod corporis
+                quis ex perspiciatis expedita itaque molestiae doloribus ad consectetur blanditiis sunt? Sint minima
+                veritatis, quia et magnam architecto similique animi soluta iure nostrum repellendus enim fuga
+                reiciendis asperiores nam aliquam delectus a nisi vitae tempore harum adipisci. Nesciunt doloremque nisi
+                possimus doloribus.
+            </p>
+            <h3 id="java2">Part II</h3>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem accusamus commodi repellendus similique
+                libero doloribus magnam illo, accusantium totam quos veritatis ducimus quibusdam sit repellat quasi
+                delectus necessitatibus aspernatur temporibus eveniet fugit reprehenderit suscipit blanditiis! Tempore
+                perferendis architecto optio repudiandae dolore ullam distinctio vitae sapiente nesciunt ducimus
+                necessitatibus odit magni harum, obcaecati qui. Dolor non animi quia, adipisci tempore cum saepe
+                doloribus dolorum temporibus dolore dolorem necessitatibus est expedita facilis quaerat atque nam? At,
+                tempore odio. Id, quo eligendi. Excepturi illo, cupiditate porro sed facilis similique repellat
+                consequuntur totam non, laborum molestias aliquid obcaecati exercitationem? Nesciunt corrupti accusamus,
+                quo iure nulla assumenda? Nulla dolorem aliquam ipsam veniam et quidem explicabo delectus voluptates
+                totam consequuntur autem alias soluta sapiente, nam ad voluptate beatae ipsa? Maxime blanditiis magni
+                dolore numquam eius repellendus vel qui labore quaerat officia optio nemo a ab ratione facilis fugiat
+                esse cupiditate recusandae, in quis quo repudiandae ipsum! Soluta animi magni, hic amet ab quod corporis
+                quis ex perspiciatis expedita itaque molestiae doloribus ad consectetur blanditiis sunt? Sint minima
+                veritatis, quia et magnam architecto similique animi soluta iure nostrum repellendus enim fuga
+                reiciendis asperiores nam aliquam delectus a nisi vitae tempore harum adipisci. Nesciunt doloremque nisi
+                possimus doloribus.
+            </p>
+        </section>
+
+        <section>
+            <h2 id="html">HTML</h2>
+            <h3 id="html1">Part I</h3>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem accusamus commodi repellendus similique
+                libero doloribus magnam illo, accusantium totam quos veritatis ducimus quibusdam sit repellat quasi
+                delectus necessitatibus aspernatur temporibus eveniet fugit reprehenderit suscipit blanditiis! Tempore
+                perferendis architecto optio repudiandae dolore ullam distinctio vitae sapiente nesciunt ducimus
+                necessitatibus odit magni harum, obcaecati qui. Dolor non animi quia, adipisci tempore cum saepe
+                doloribus dolorum temporibus dolore dolorem necessitatibus est expedita facilis quaerat atque nam? At,
+                tempore odio. Id, quo eligendi. Excepturi illo, cupiditate porro sed facilis similique repellat
+                consequuntur totam non, laborum molestias aliquid obcaecati exercitationem? Nesciunt corrupti accusamus,
+                quo iure nulla assumenda? Nulla dolorem aliquam ipsam veniam et quidem explicabo delectus voluptates
+                totam consequuntur autem alias soluta sapiente, nam ad voluptate beatae ipsa? Maxime blanditiis magni
+                dolore numquam eius repellendus vel qui labore quaerat officia optio nemo a ab ratione facilis fugiat
+                esse cupiditate recusandae, in quis quo repudiandae ipsum! Soluta animi magni, hic amet ab quod corporis
+                quis ex perspiciatis expedita itaque molestiae doloribus ad consectetur blanditiis sunt? Sint minima
+                veritatis, quia et magnam architecto similique animi soluta iure nostrum repellendus enim fuga
+                reiciendis asperiores nam aliquam delectus a nisi vitae tempore harum adipisci. Nesciunt doloremque nisi
+                possimus doloribus.
+            </p>
+            <h3 id="html2">Part II</h3>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem accusamus commodi repellendus similique
+                libero doloribus magnam illo, accusantium totam quos veritatis ducimus quibusdam sit repellat quasi
+                delectus necessitatibus aspernatur temporibus eveniet fugit reprehenderit suscipit blanditiis! Tempore
+                perferendis architecto optio repudiandae dolore ullam distinctio vitae sapiente nesciunt ducimus
+                necessitatibus odit magni harum, obcaecati qui. Dolor non animi quia, adipisci tempore cum saepe
+                doloribus dolorum temporibus dolore dolorem necessitatibus est expedita facilis quaerat atque nam? At,
+                tempore odio. Id, quo eligendi. Excepturi illo, cupiditate porro sed facilis similique repellat
+                consequuntur totam non, laborum molestias aliquid obcaecati exercitationem? Nesciunt corrupti accusamus,
+                quo iure nulla assumenda? Nulla dolorem aliquam ipsam veniam et quidem explicabo delectus voluptates
+                totam consequuntur autem alias soluta sapiente, nam ad voluptate beatae ipsa? Maxime blanditiis magni
+                dolore numquam eius repellendus vel qui labore quaerat officia optio nemo a ab ratione facilis fugiat
+                esse cupiditate recusandae, in quis quo repudiandae ipsum! Soluta animi magni, hic amet ab quod corporis
+                quis ex perspiciatis expedita itaque molestiae doloribus ad consectetur blanditiis sunt? Sint minima
+                veritatis, quia et magnam architecto similique animi soluta iure nostrum repellendus enim fuga
+                reiciendis asperiores nam aliquam delectus a nisi vitae tempore harum adipisci. Nesciunt doloremque nisi
+                possimus doloribus.
+            </p>
+        </section>
+
+        <section>
+            <h2 id="js">JavaScript</h2>
+            <h3 id="js1">Part I</h3>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem accusamus commodi repellendus similique
+                libero doloribus magnam illo, accusantium totam quos veritatis ducimus quibusdam sit repellat quasi
+                delectus necessitatibus aspernatur temporibus eveniet fugit reprehenderit suscipit blanditiis! Tempore
+                perferendis architecto optio repudiandae dolore ullam distinctio vitae sapiente nesciunt ducimus
+                necessitatibus odit magni harum, obcaecati qui. Dolor non animi quia, adipisci tempore cum saepe
+                doloribus dolorum temporibus dolore dolorem necessitatibus est expedita facilis quaerat atque nam? At,
+                tempore odio. Id, quo eligendi. Excepturi illo, cupiditate porro sed facilis similique repellat
+                consequuntur totam non, laborum molestias aliquid obcaecati exercitationem? Nesciunt corrupti accusamus,
+                quo iure nulla assumenda? Nulla dolorem aliquam ipsam veniam et quidem explicabo delectus voluptates
+                totam consequuntur autem alias soluta sapiente, nam ad voluptate beatae ipsa? Maxime blanditiis magni
+                dolore numquam eius repellendus vel qui labore quaerat officia optio nemo a ab ratione facilis fugiat
+                esse cupiditate recusandae, in quis quo repudiandae ipsum! Soluta animi magni, hic amet ab quod corporis
+                quis ex perspiciatis expedita itaque molestiae doloribus ad consectetur blanditiis sunt? Sint minima
+                veritatis, quia et magnam architecto similique animi soluta iure nostrum repellendus enim fuga
+                reiciendis asperiores nam aliquam delectus a nisi vitae tempore harum adipisci. Nesciunt doloremque nisi
+                possimus doloribus.
+            </p>
+            <h3 id="js2">Part II</h3>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem accusamus commodi repellendus similique
+                libero doloribus magnam illo, accusantium totam quos veritatis ducimus quibusdam sit repellat quasi
+                delectus necessitatibus aspernatur temporibus eveniet fugit reprehenderit suscipit blanditiis! Tempore
+                perferendis architecto optio repudiandae dolore ullam distinctio vitae sapiente nesciunt ducimus
+                necessitatibus odit magni harum, obcaecati qui. Dolor non animi quia, adipisci tempore cum saepe
+                doloribus dolorum temporibus dolore dolorem necessitatibus est expedita facilis quaerat atque nam? At,
+                tempore odio. Id, quo eligendi. Excepturi illo, cupiditate porro sed facilis similique repellat
+                consequuntur totam non, laborum molestias aliquid obcaecati exercitationem? Nesciunt corrupti accusamus,
+                quo iure nulla assumenda? Nulla dolorem aliquam ipsam veniam et quidem explicabo delectus voluptates
+                totam consequuntur autem alias soluta sapiente, nam ad voluptate beatae ipsa? Maxime blanditiis magni
+                dolore numquam eius repellendus vel qui labore quaerat officia optio nemo a ab ratione facilis fugiat
+                esse cupiditate recusandae, in quis quo repudiandae ipsum! Soluta animi magni, hic amet ab quod corporis
+                quis ex perspiciatis expedita itaque molestiae doloribus ad consectetur blanditiis sunt? Sint minima
+                veritatis, quia et magnam architecto similique animi soluta iure nostrum repellendus enim fuga
+                reiciendis asperiores nam aliquam delectus a nisi vitae tempore harum adipisci. Nesciunt doloremque nisi
+                possimus doloribus.
+            </p>
+        </section>
+    </article>
+</body>
+
+</html>

@@ -15,7 +15,8 @@
     const infoDiv = $('#info');
     infoDiv.hide();
 
-
+    //on used for accessing any DOM event, even if there isn't a jQuery shortcut
+    // $('#form').on('submit', function(e){
     $("#form").submit(function (e) {
         e.preventDefault();
 

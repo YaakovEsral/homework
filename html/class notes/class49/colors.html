@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- FINISHED!!! Great job! -->
+
+    <style>
+        body {
+            display: grid;
+            
+            /* 1. */
+            grid-template-columns: repeat(8, minmax(25px, 75px));
+            grid-template-rows: repeat(8, minmax(25px, 75px));
+
+            /* 2. */
+            /* grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            margin: auto;
+            max-width: 1080px;
+            height: 1080px; */
+        }
+
+        .one {
+            grid-column: 1 / 5;
+            grid-row: 4 /6;
+            background-color: lightcoral;
+        }
+
+        .two{
+            background-color: lightgreen;
+            grid-column: 4 / 6;
+            grid-row: 1 / 5;
+        }
+
+        .three {
+            background-color: lightskyblue;
+            grid-column: 5 / 9;
+            grid-row: 4 / 6;
+
+        }
+
+        .four {
+            background-color: orange;
+            grid-column: 4 / 6;
+            grid-row: 5 / 9;
+        }
+
+
+        /* might be nice to get this last part done without "cheating",
+        but it definitely works */
+        .extra {
+            background-color: lightcoral;
+            grid-column: 4 / 5;
+            grid-row: 5 / 6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="extra"></div>
+</body>
+
+</html>

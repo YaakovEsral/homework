@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: repeat(12, [col-start] 1fr);
+            gap: 2em;
+        }
+
+        body>* {
+            grid-column: 1 / -1;
+        }
+
+        @media screen and (min-width: 500px) {
+            aside {
+                grid-column: 1 / 4;
+                grid-row: 3;
+            }
+
+            .ad {
+                grid-column: col-start 4 / span 3;
+            }
+
+            article,
+            footer {
+                grid-column: col-start 4 / -1;
+            }
+
+            nav ul {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            @media screen and (min-width: 700px) {
+                nav {
+                    grid-column: col-start 1 / span 2;
+                }
+
+                article {
+                    grid-column: col-start 3 / span 8;
+                    grid-row: 2;
+                }
+
+                aside {
+                    grid-column: col-start 11 / -1;
+                    grid-row: 2;
+                }
+
+                .ad {
+                    grid-column: col-start 11 / -1;
+                }
+
+                footer {
+                    grid-column: 1 / -1;
+                }
+
+                nav ul {
+                    flex-direction: column;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header goes here</header>
+    <nav>
+        <ul>
+            <li><a href="">Link 1</a></li>
+            <li><a href="">Link 2</a></li>
+            <li><a href="">Link 3</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h1>Main Content</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam fuga consequatur, nisi nihil velit sit, saepe
+            atque aperiam, molestias a beatae doloribus doloremque voluptatum? Ex eum odit natus cumque accusamus
+            aliquid fugiat neque consequatur veritatis nemo architecto consectetur ducimus quam vel molestias odio enim
+            eos, ratione dicta expedita! Ipsa numquam necessitatibus obcaecati modi molestiae non omnis ex ut nemo
+            aliquid? Fugiat pariatur beatae mollitia, reprehenderit explicabo culpa est aliquam iste possimus alias,
+            error ipsum fuga dicta deleniti quam? Exercitationem veniam neque facere vitae rem asperiores ducimus eaque,
+            laudantium inventore unde explicabo dolores vero eos, eligendi aut ab quaerat! Doloribus, amet adipisci
+            quaerat perferendis nobis ducimus enim a cupiditate eum culpa itaque, ad eveniet laboriosam temporibus
+            repellat vero quia qui odio? Itaque possimus, odio dignissimos nobis, corrupti a eaque recusandae modi
+            to harum iure quo veniam dolore?</p>
+
+    </article>
+    <aside>AsideLorem ipsum dolor sit, amet consectetur adipisicing elit. Eius debitis tenetur in rem cumque
+        corporis
+        ipsam fugiat dignissimos alias distinctio. Temporibus accusantium atque ab, placeat nihil itaque magnam a
+        ipsa esse sequi nostrum porro accusamus corrupti qui eligendi consequatur quo asperiores, omnis deleniti aut
+        deserunt nisi voluptate exercitationem? Corrupti, et!</aside>
+    <div class="ad">Ad goes here</div>
+    <footer>FooterLorem ipsum dolor, sit amet consectetur adipisicing elit. Ut provident consectetur repellendus
+        aliquam,
+        possimus nostrum ea tenetur minus rem ad.</footer>
+</body>
+
+</html>

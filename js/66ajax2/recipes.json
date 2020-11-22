@@ -1,5 +1,5 @@
 [
-    {   
+    {
         "id": "drumsticks",
         "name": "Bourbon Chicken Drumsticks",
         "ingredients": [
@@ -35,7 +35,7 @@
         ],
         "pic": "https://www.kosher.com/resized/details.slide/i/s/Israel,_Tammy._Honey,_Red_Wine,_and_Fig_Ribs_crop.jpg"
     },
-    {   
+    {
         "id": "wings",
         "name": "Honey Sesame Crispy Wings",
         "ingredients": [
