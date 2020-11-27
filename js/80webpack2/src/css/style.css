@@ -1,0 +1,34 @@
+* {
+    text-align: center;
+}
+
+button {
+    background-color: rgb(37, 37, 158);
+    font-size: 20px;
+    padding: .5em;
+    color: #FDFDFD;
+    border-radius: 6px;
+    outline: transparent;
+    border: transparent;
+}
+
+h1  {
+    font-size: 46px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 3px solid rgba(185, 138, 8, 0.774);
+    border-radius: 6px;
+    padding: .5em;
+}
+
+p  {
+    font-size: 26px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 3px solid rgba(19, 79, 190, 0.774);
+    border-radius: 6px;
+    padding: 1em;
+}
+
+img {
+    height: 75px;
+    width: 75px;
+}
