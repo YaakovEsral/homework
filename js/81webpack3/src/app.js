@@ -31,14 +31,13 @@ console.log(UNIT, 'unit');
 let animationOn = false;
 
 function animate() {
-    console.log('inside animate ');
     if (animationOn) {
         repaint();
         requestAnimationFrame(animate);
     }
 }
 
-console.log(canvas.height, 'height');
+// console.log(canvas.height, 'height');
 
 function repaint() {
     c.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
@@ -55,7 +54,6 @@ function repaint() {
 
 }
 get('startGame').addEventListener('click', () => {
-    console.log('clicked button');
     hide(buttonDiv);
     animationOn = false;
     startNewGame();

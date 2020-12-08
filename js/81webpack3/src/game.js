@@ -3,7 +3,7 @@ import { Avatar } from './avatar';
 import { Bubble } from './bubble';
 import { Level } from './level';
 import json from './levels.json5';
-import {startAnimation} from './app';
+import { startAnimation } from './app';
 
 function get(id) {
     return document.getElementById(id);
@@ -34,7 +34,7 @@ const hud = {
     width: canvas.width,
     img: new Image()
 };
-hud.img.src= './images/brickBg.png';
+hud.img.src = './images/brickBg.png';
 
 const field = {
     height: canvas.height - hud.height,
@@ -84,7 +84,7 @@ function animate() {
 // startNewGame();
 
 
-export function startNewGame(){
+export function startNewGame() {
     avatar = new Avatar(field, UNIT);
     bubbles = [];
 
@@ -99,7 +99,7 @@ export function startNewGame(){
 
     // levels[levelIndex].bgImg.onload = getNewLevel();
     getNewLevel();
-    animate();    
+    animate();
 }
 
 function repaint() {
@@ -116,32 +116,29 @@ function repaint() {
     c.font = `${UNIT * 1.5}px ${gameFont}`;
     c.textAlign = 'center';
     c.textBaseline = 'top';
-    c.fillText(`Level ${levelIndex + 1}`, UNIT * 3, field.height + hud.height/2);
+    c.fillText(`Level ${levelIndex + 1}`, UNIT * 3, field.height + hud.height / 2);
 
     //score
     updateScore();
 
-    //draw the bubbles
-    bubbles.forEach(bubble => bubble.update());
-
     //end level if time is out
     if (timerWidth - timeElapsed <= 0) {
         c.fillStyle = 'yellow';
-        c.font = `${UNIT *3}px ${gameFont}`;
+        c.font = `${UNIT * 3}px ${gameFont}`;
         c.textAlign = 'center';
-        c.fillText('TIME\'S UP!!!', canvas.width/2, canvas.height/3);
+        c.fillText('TIME\'S UP!!!', canvas.width / 2, canvas.height / 3);
         timeUp = true;
         endLevel();
     }
 
     //end level if a bubble hits the avatar
     for (let i = 0; i < bubbles.length; i++) {
-        if(bubbles[i].x + bubbles[i].radius > avatar.x + avatar.hitOffset &&
+        if (bubbles[i].x + bubbles[i].radius > avatar.x + avatar.hitOffset &&
             bubbles[i].x - bubbles[i].radius < avatar.x + avatar.width - avatar.hitOffset &&
-            bubbles[i].y > avatar.y){
+            bubbles[i].y > avatar.y) {
             avatar.gotHit = true;
             endLevel();
-        }        
+        }
     }
 
     //draw the beam
@@ -153,7 +150,7 @@ function repaint() {
         c.lineTo(avatar.beam.x, avatar.beam.yTop -= avatar.beam.increment);
         c.stroke();
 
-        //check for beam collision
+        //check for beam collision while beam is shooting
         for (let i = 0; i < bubbles.length; i++) {
             if (bubbles[i].checkBeamCollision(avatar.beam) === true) {
                 handleBeamCollision(i);
@@ -168,14 +165,17 @@ function repaint() {
         avatar.resetBeam();
     }
 
-    //draw the avatar
-    c.drawImage(avatar.img, avatar.x, avatar.y, avatar.width, avatar.height);
-
-    //move the avatar if it is in a moving state
-    if (avatar.movePlusMinus !== 0) {
-        avatar.move();
-    }
-
+        //move the avatar if it is in a moving state
+        if (avatar.movePlusMinus !== 0) {
+            avatar.move();
+        }
+        //draw the avatar
+        c.drawImage(avatar.img, avatar.x, avatar.y, avatar.width, avatar.height);
+    
+        //draw the bubbles
+        bubbles.forEach(bubble => bubble.update());
+    
+    
 }
 
 function getNewLevel() {
@@ -189,6 +189,7 @@ function getNewLevel() {
                 field: field,
                 ctx: c,
                 color: bubble.bubbleColor,
+                offset: bubble.offset
             }, UNIT, bubble.type
         ));
     });
@@ -286,7 +287,7 @@ function updateScore() {
     c.font = `${UNIT * 1.5}px ${gameFont}`;
     c.textAlign = 'center';
     c.textBaseline = 'top';
-    c.fillText(`Score: ${score}`, hud.width - UNIT * 5, field.height + hud.height/2);
+    c.fillText(`Score: ${score}`, hud.width - UNIT * 5, field.height + hud.height / 2);
 }
 
 function updateTime() {
@@ -301,13 +302,14 @@ function updateTime() {
 }
 
 function endLevel() {
+    timeRunning = false;
+
     if (timeUp || avatar.gotHit) {
         gameOn = false;
-        timeRunning = false;
         endGame();
         return;
     }
-    
+
     avatar.resetBeam();
     if (levelIndex >= levels.length) {
         return;
@@ -319,11 +321,11 @@ function endLevel() {
 }
 
 function endGame() {
-    setTimeout(() =>{
+    setTimeout(() => {
         c.fillStyle = 'yellow';
-        c.font = `${UNIT *3}px ${gameFont}`;
+        c.font = `${UNIT * 3}px ${gameFont}`;
         c.textAlign = 'center';
-        c.fillText('GAME OVER', canvas.width/2, canvas.height/2);
+        c.fillText('GAME OVER', canvas.width / 2, canvas.height / 2);
 
         setTimeout(startAnimation, 2000);
     }, 500);

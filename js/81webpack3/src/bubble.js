@@ -40,7 +40,7 @@ const bubbleTypes = [
 ];
 
 export class Bubble {
-    //static velocityFactor = 7.45; //not allowed with webpack until we get babel set up
+    // static velocityFactor = 7.45; //not allowed with webpack until we get babel set up
 
     constructor(obj, UNIT, type) {
         this.field = obj.field;
@@ -51,6 +51,17 @@ export class Bubble {
 
         this.x = obj.x || this.radius * 2;
         this.y = obj.y || this.field.height / 2;
+
+        //enable the user to pass in an offset value to position each bubble
+        // if(obj.offset){
+        //     console.log('there is an offset', obj.offset);
+        // }
+        if (obj.offset && obj.offset.left === true) {
+            this.x = obj.offset.val * this.x;
+        } else if (obj.offset && !obj.offset.left) {
+            this.x = this.field.width - obj.offset.val * this.x;
+        }
+
         this.velocityX = obj.velocityX || UNIT / 20.5; //was 2 with UNIT 41
         this.velocityY = obj.velocityY || 0;
         this.gravity = UNIT / 410; //was 0.1 with UNIT 41
@@ -104,7 +115,7 @@ export class Bubble {
         return this.hitStatus;
     }
 
-    checkCeilingCollision(){
+    checkCeilingCollision() {
         if (this.y - this.radius <= 0) {
             this.hitStatus = true;
         }

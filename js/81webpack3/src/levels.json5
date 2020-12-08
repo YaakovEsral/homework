@@ -5,7 +5,15 @@
             {
                 "bubbleColor": '#574FFF',
                 "type": 2
-            }
+            },
+            // {
+            //     "bubbleColor": '#574FFF',
+            //     "type": 2,
+                // "offset": {
+                //     val: 3,
+                //     left: true
+                // }
+            // }
         ],
         "timeFactor": 27 //hudWidth / ((UNIT / timeFactor) * 60) = seconds per level, where 60 is frames per second
     },
