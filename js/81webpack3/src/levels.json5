@@ -1,0 +1,99 @@
+[
+    {
+        "bgImgSrc": './images/level1.png',
+        "bubbles": [
+            {
+                "bubbleColor": '#574FFF',
+                "type": 2
+            }
+        ],
+        "timeFactor": 27 //hudWidth / ((UNIT / timeFactor) * 60) = seconds per level, where 60 is frames per second
+    },
+    
+    {
+        bgImgSrc: './images/level2.png',
+        "bubbles": [
+            {
+                bubbleColor: '#e36505',
+                type: 3
+            }
+        ],
+        "timeFactor": 37
+    },
+
+    {
+        bgImgSrc: './images/level3.png',
+        "bubbles": [
+            {
+                bubbleColor: '#1c7a02',
+                type: 4
+            }
+        ],
+        "timeFactor": 47
+    },
+
+    {
+        bgImgSrc: './images/level4.png',
+        "bubbles": [
+            {
+                bubbleColor: '#FFCF23',
+                type: 5
+            }
+        ],
+        "timeFactor": 100
+    },
+
+    {
+        bgImgSrc: './images/level5.png',
+        "bubbles": [
+            {
+                bubbleColor: '#3d0563',
+                type: 6
+            }
+        ],
+        "timeFactor": 120
+    },
+
+    {
+        bgImgSrc: './images/level6.png',
+        "bubbles": [
+            {
+                bubbleColor: '#42FF21',
+                type: 5
+            },
+            {
+                bubbleColor: '#42FF21',
+                type: 5
+            }
+        ],
+        "timeFactor": 150
+    },
+
+    {
+        bgImgSrc: './images/level7.png',
+        "bubbles": [
+            {
+                bubbleColor: '#a60303',
+                type: 5
+            },
+            {
+                bubbleColor: '#e5f50c',
+                type: 4
+            }
+        ],
+        "timeFactor": 200
+    },
+
+        {
+        bgImgSrc: './images/level8.png',
+        "bubbles": [
+            {
+                bubbleColor: '#42FF21',
+                type: 7
+            }
+        ],
+        "timeFactor": 230
+    }
+
+
+]

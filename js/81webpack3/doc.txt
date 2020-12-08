@@ -1,0 +1,75 @@
+Project: make a game similar to bubble trouble using webpack.
+Game description: An avatar is on the bottom of the screen. On each level, there is a number of bubbles 
+he needs to shoot. The bigger ones split off into two smaller ones, until they are small enough to pop on 
+their own.
+Scoring: points can be based on how many levels he reaches, or on how fast he completes a level.
+
+Components:
+level class
+    attributes: (level no.,) difficulty (size and speed of the bubble, number of bubbles)(, background)
+    functions: end level
+
+bubble class
+    attributes: size, color, speed, direction (coordinates).
+    functions: pop(remove from array), create new bubbles.
+
+game (class)?
+    attributes: level, avatar, score
+    functions: get new level, updateScore, checkForAvatarCollision, (keepTime,) end game
+
+avatar
+    attributes: size
+    functions: move, shoot
+
+game play: 
+As a new level starts, the bubble is placed in a (random or specific spot). the bubble will 
+bounce off the walls following a predictable trajectory. The avatar will try to shoot the bubble. Each time
+he hits, the bubble will pop and generate two smaller bubbles. Those bubbles will shoot diagonally
+upwards in different directions. If a bubble hits the player (or add. if time runs out), the game 
+is over. if the player completes the level, the game (does fireworks/music and) moves to a new level.
+
+canvas and game loop specs:
+the canvas size will be based on the screen size. the width:height will be (3:2 ?). The size will be 
+determined at the beginning of the game (and stay the same even if the screen is resized ?).
+the background of the canvas will differ for each level.
+the game loop will use the requestAnimationFrame function.
+
+file structure:
+index.html - the html page where the canvas is located.
+app.js - imports all game components and executes them.
+level.js - the level class
+bubble.js - the bubble class
+game.js - the game class
+avatar.js - the avatar object
+levels.json5 - info about each level (difficulty, background)
+
+app.js creates a new game. The game will have an avatar and a level. The level will have a background
+and a difficulty.
+(app.js sets the background of the canvas to the level's background. it will retrieve data from
+levels.json5 and save the data in an array 'levels'.)
+on the start of the game, app.js will retrieve a game from game.js. game.js will provide the avatar,
+the level and points (if applicable). game.js will also retrieve info about the levels from levels.json5
+and store the info in an array. game.js will have a counter currentLevel and a function getNewLevel.
+getNewLevel will retrieve a new level from level.js at the end of each round.
+
+how many bubble sizes? 7
+
+types
+types are saved in an array in the Bubble module (currently outside the class, but ideally would be static
+values inside the class - this is not available yet). they can either be numbered either a)0-6 or b)1-7.
+0-6 is helpful for the Bubble constructor, as it would allow the type to be the same as the index (0-based)
+in the array.
+1-7 is helpful for scoring, as it enables us to give points based on the type value (which wouldn't work if
+one of them is 0).
+as of now we are using method b), and simply providing offset in the Bubble constructor for radius and velocity
+
+SCORING
+points awarded for the following:
+A. hitting a bubble
+B. making bubble hit the ceiling (bonus)
+C. completing level with time remaining
+
+point value
+A. value of the bubble type (1 pt. for type 1, etc)
+B. value of bubble type * 2 (2pt. for type 1, etc.)
+C. 1 pt for each increment (tbd)
