@@ -18,6 +18,7 @@ class Avatar {
         this.midpoint = function () { return this.x + (this.width / 2) };
         this.hitOffset = UNIT / 3.85;
         this.gotHit = false;
+        this.lives = 3;
 
         this.beam = {
             width: UNIT / 6.83,  //6 when UNIT = 41

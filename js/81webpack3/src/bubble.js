@@ -1,6 +1,6 @@
 // vy range is from 5.5 (lowest) to 11- (highest) when UNIT is 40~41
 
-const bubbleTypes = [
+export const bubbleTypes = [
     {
         type: 1,
         radiusFactor: 5.5, // results in radius of 7.5 when UNIT/radiusFactor and UNIT is 41

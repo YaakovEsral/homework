@@ -148,4 +148,4 @@ export function startAnimation() {
     animate();
 }
 
-startAnimation();
+bgImg.onload = startAnimation();

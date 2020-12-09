@@ -1,6 +1,7 @@
 import './css/style.css';
 import { Avatar } from './avatar';
 import { Bubble } from './bubble';
+import { bubbleTypes } from './bubble';
 import { Level } from './level';
 import json from './levels.json5';
 import { startAnimation } from './app';
@@ -50,6 +51,8 @@ let timeRunning;
 let timeUp;
 
 let score;
+const scoreFactor = 3; //points per hit = bubbleType * scoreFactor
+const timeScoreFactor = 5; //used to calculate points for completing level in time
 const ceilingBonusFactor = 2;
 
 
@@ -58,6 +61,9 @@ let bubbles = [];
 
 let levelIndex;
 const levels = [];
+for (let i = 0; i < json.length; i++) {
+    levels[i] = new Level(json[i]);
+}
 
 /*originally used to import all bg images at one time. now we are using CopyPlugin to 
 copy all images from original directory 'src/images' into 'dist/images'
@@ -68,13 +74,11 @@ copy all images from original directory 'src/images' into 'dist/images'
 // }
 // const bgImages = importAll(require.context('./images', false, /level/));
 
-
-
 function animate() {
-    if (gameOn) { //may want to move this later to the actual loop
-        repaint();
-        requestAnimationFrame(animate);
-    }
+    // if (gameOn) { //may want to move this later to the actual loop
+    repaint();
+    requestAnimationFrame(animate);
+    // }
 }
 
 // import bg from './images/level1.png';
@@ -83,87 +87,91 @@ function animate() {
 
 // startNewGame();
 
-
 export function startNewGame() {
     avatar = new Avatar(field, UNIT);
     bubbles = [];
-
-    for (let i = 0; i < json.length; i++) {
-        levels[i] = new Level(json[i]);
-    }
 
     score = 0;
     levelIndex = 0;
     timeUp = false;
     gameOn = true;
 
-    // levels[levelIndex].bgImg.onload = getNewLevel();
     getNewLevel();
-    animate();
+    levels[levelIndex].bgImg.onload = animate();
+
+    // animate();
 }
 
 function repaint() {
-    c.drawImage(levels[levelIndex].bgImg, 0, 0, canvas.width, canvas.height);
+    if (gameOn) {
+        c.drawImage(levels[levelIndex].bgImg, 0, 0, canvas.width, canvas.height);
 
-    //drawing the hud
-    c.drawImage(hud.img, 0, canvas.height - hud.height, hud.width, hud.height);
+        //drawing the hud
+        c.drawImage(hud.img, 0, canvas.height - hud.height, hud.width, hud.height);
 
-    //time
-    updateTime();
+        //time
+        updateTime();
 
-    //level no.
-    c.fillStyle = '#054263';
-    c.font = `${UNIT * 1.5}px ${gameFont}`;
-    c.textAlign = 'center';
-    c.textBaseline = 'top';
-    c.fillText(`Level ${levelIndex + 1}`, UNIT * 3, field.height + hud.height / 2);
-
-    //score
-    updateScore();
-
-    //end level if time is out
-    if (timerWidth - timeElapsed <= 0) {
-        c.fillStyle = 'yellow';
-        c.font = `${UNIT * 3}px ${gameFont}`;
+        //level no.
+        c.fillStyle = '#054263';
+        c.font = `${UNIT * 1.5}px ${gameFont}`;
         c.textAlign = 'center';
-        c.fillText('TIME\'S UP!!!', canvas.width / 2, canvas.height / 3);
-        timeUp = true;
-        endLevel();
-    }
+        c.textBaseline = 'top';
+        c.fillText(`Level ${levelIndex + 1}`, UNIT * 3, field.height + hud.height / 2);
 
-    //end level if a bubble hits the avatar
-    for (let i = 0; i < bubbles.length; i++) {
-        if (bubbles[i].x + bubbles[i].radius > avatar.x + avatar.hitOffset &&
-            bubbles[i].x - bubbles[i].radius < avatar.x + avatar.width - avatar.hitOffset &&
-            bubbles[i].y > avatar.y) {
-            avatar.gotHit = true;
+        //score
+        updateScore();
+
+        //end level if time is out
+        if (timerWidth - timeElapsed <= 0) {
+            c.fillStyle = 'yellow';
+            c.font = `${UNIT * 3}px ${gameFont}`;
+            c.textAlign = 'center';
+            c.fillText('TIME\'S UP!!!', field.width / 2, field.height / 3);
+            timeUp = true;
             endLevel();
         }
-    }
 
-    //draw the beam
-    if (avatar.beam.shooting) {
-        c.strokeStyle = avatar.beam.color;
-        c.lineWidth = avatar.beam.width;
-        c.beginPath();
-        c.moveTo(avatar.beam.x, avatar.beam.yBottom);
-        c.lineTo(avatar.beam.x, avatar.beam.yTop -= avatar.beam.increment);
-        c.stroke();
-
-        //check for beam collision while beam is shooting
+        //end level if a bubble hits the avatar
         for (let i = 0; i < bubbles.length; i++) {
-            if (bubbles[i].checkBeamCollision(avatar.beam) === true) {
-                handleBeamCollision(i);
-            } else if (bubbles[i].checkCeilingCollision() === true) {
-                handleCeilingCollision(i);
+            if (bubbles[i].x + bubbles[i].radius > avatar.x + avatar.hitOffset &&
+                bubbles[i].x - bubbles[i].radius < avatar.x + avatar.width - avatar.hitOffset &&
+                bubbles[i].y > avatar.y) {
+                avatar.gotHit = true;
+                avatar.lives--;
+                console.log('lives remaining', avatar.lives);
+                if(avatar.lives === 0){
+                endLevel();
+                } else {
+                    gameOn = false;
+                    setTimeout(getNewLevel, 500);
+                }
             }
         }
-    }
 
-    //reset the beam once it goes off the screen
-    if (avatar.beam.yTop <= 0) {
-        avatar.resetBeam();
-    }
+        //draw the beam
+        if (avatar.beam.shooting) {
+            c.strokeStyle = avatar.beam.color;
+            c.lineWidth = avatar.beam.width;
+            c.beginPath();
+            c.moveTo(avatar.beam.x, avatar.beam.yBottom);
+            c.lineTo(avatar.beam.x, avatar.beam.yTop -= avatar.beam.increment);
+            c.stroke();
+
+            //check for beam collision while beam is shooting
+            for (let i = 0; i < bubbles.length; i++) {
+                if (bubbles[i].checkBeamCollision(avatar.beam) === true) {
+                    handleBeamCollision(i);
+                } else if (bubbles[i].checkCeilingCollision() === true) {
+                    handleCeilingCollision(i);
+                }
+            }
+        }
+
+        //reset the beam once it goes off the screen
+        if (avatar.beam.yTop <= 0) {
+            avatar.resetBeam();
+        }
 
         //move the avatar if it is in a moving state
         if (avatar.movePlusMinus !== 0) {
@@ -171,17 +179,20 @@ function repaint() {
         }
         //draw the avatar
         c.drawImage(avatar.img, avatar.x, avatar.y, avatar.width, avatar.height);
-    
+
         //draw the bubbles
         bubbles.forEach(bubble => bubble.update());
-    
-    
+
+    }
 }
 
 function getNewLevel() {
     timeInc = UNIT / levels[levelIndex].timeFactor;
     timeElapsed = 0;
     timeRunning = true;
+    gameOn = true;
+    bubbles = [];
+    avatar.gotHit = false;
 
     levels[levelIndex].bubbles.forEach(bubble => {
         bubbles.push(new Bubble(
@@ -228,7 +239,7 @@ function handleBeamCollision(index) {
     const oldBubble = bubbles[index];
 
     //increment score. may make a function for this later
-    score += oldBubble.type;
+    score += oldBubble.type * scoreFactor;
 
     //remove the bubble and the beam
     bubbles.splice(index, 1);
@@ -242,10 +253,9 @@ function handleBeamCollision(index) {
                 ctx: c,
                 x: oldBubble.x,
                 y: oldBubble.y,
-                radius: oldBubble.radius / 2,
                 color: oldBubble.color,
                 velocityX: -Math.abs(oldBubble.velocityX),
-                velocityY: -Math.abs(oldBubble.maxBounceYVelocity * 0.7)// -Math.abs(oldBubble.velocityY) //will need to change so the bubble shoots up when you hit it
+                velocityY: -Math.abs(oldBubble.maxBounceYVelocity * 0.7)
             }, UNIT, (oldBubble.type - 1)
         ));
         bubbles.push(new Bubble(
@@ -310,6 +320,9 @@ function endLevel() {
         return;
     }
 
+    // console.log('end level');
+    score += Math.floor((timerWidth / timeElapsed) * timeScoreFactor);
+
     avatar.resetBeam();
     if (levelIndex >= levels.length) {
         return;
@@ -325,7 +338,7 @@ function endGame() {
         c.fillStyle = 'yellow';
         c.font = `${UNIT * 3}px ${gameFont}`;
         c.textAlign = 'center';
-        c.fillText('GAME OVER', canvas.width / 2, canvas.height / 2);
+        c.fillText('GAME OVER', field.width / 2, field.height / 2);
 
         setTimeout(startAnimation, 2000);
     }, 500);

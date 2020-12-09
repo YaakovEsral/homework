@@ -59,7 +59,7 @@
                 type: 6
             }
         ],
-        "timeFactor": 120
+        "timeFactor": 200
     },
 
     {
@@ -74,7 +74,7 @@
                 type: 5
             }
         ],
-        "timeFactor": 150
+        "timeFactor": 230
     },
 
     {
@@ -89,7 +89,7 @@
                 type: 4
             }
         ],
-        "timeFactor": 200
+        "timeFactor": 270
     },
 
         {
@@ -100,7 +100,7 @@
                 type: 7
             }
         ],
-        "timeFactor": 230
+        "timeFactor": 300
     }
 
 
