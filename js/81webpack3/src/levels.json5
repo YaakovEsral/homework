@@ -56,7 +56,17 @@
         "bubbles": [
             {
                 bubbleColor: '#3d0563',
-                type: 6
+                type: 4
+            },
+            {
+                bubbleColor: '#3d0563',
+                type: 4,
+                offset: {
+                    left: false,
+                    val: 1
+                },
+                dirLeft: true
+                
             }
         ],
         "timeFactor": 200
@@ -67,12 +77,49 @@
         "bubbles": [
             {
                 bubbleColor: '#42FF21',
-                type: 5
+                type: 2,
+                maxBounceYVelocity: 3.6,
+                offset: {
+                    left: true,
+                    val: 1.5
+                }
             },
             {
                 bubbleColor: '#42FF21',
-                type: 5
-            }
+                type: 2,
+                maxBounceYVelocity: 3.6,
+                offset: {
+                    left: true,
+                    val: 3
+                }
+            },
+            {
+                bubbleColor: '#42FF21',
+                type: 2,
+                maxBounceYVelocity: 3.6,
+                offset: {
+                    left: true,
+                    val: 4.5
+                }
+            },            {
+                bubbleColor: '#42FF21',
+                type: 2,
+                maxBounceYVelocity: 3.6,
+                offset: {
+                    left: true,
+                    val: 6
+                }
+            },
+            {
+                bubbleColor: '#42FF21',
+                type: 2,
+                maxBounceYVelocity: 3.6,
+                offset: {
+                    left: true,
+                    val: 7.5
+                }
+            },
+
         ],
         "timeFactor": 230
     },

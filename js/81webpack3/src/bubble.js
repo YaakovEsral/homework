@@ -42,20 +42,17 @@ export const bubbleTypes = [
 export class Bubble {
     // static velocityFactor = 7.45; //not allowed with webpack until we get babel set up
 
-    constructor(obj, UNIT, type) {
-        this.field = obj.field;
-        this.ctx = obj.ctx;
+    constructor(fieldData, obj, UNIT) {
+        this.field = fieldData.field;
+        this.ctx = fieldData.ctx;
         // this.radius = obj.radius;
-        this.type = type;
+        this.type = obj.type;
         this.radius = UNIT / bubbleTypes[this.type - 1].radiusFactor; //offset -1 to get the proper index
 
         this.x = obj.x || this.radius * 2;
         this.y = obj.y || this.field.height / 2;
 
         //enable the user to pass in an offset value to position each bubble
-        // if(obj.offset){
-        //     console.log('there is an offset', obj.offset);
-        // }
         if (obj.offset && obj.offset.left === true) {
             this.x = obj.offset.val * this.x;
         } else if (obj.offset && !obj.offset.left) {
@@ -64,8 +61,14 @@ export class Bubble {
 
         this.velocityX = obj.velocityX || UNIT / 20.5; //was 2 with UNIT 41
         this.velocityY = obj.velocityY || 0;
+        
+        //user can choose to start the direction going left
+        if(obj.dirLeft){
+            this.velocityX *= -1;
+        }
+
         this.gravity = UNIT / 410; //was 0.1 with UNIT 41
-        this.maxBounceYVelocity = UNIT / bubbleTypes[this.type - 1].velocityFactor; //offset -1 to get the proper index
+        this.maxBounceYVelocity = UNIT / obj.maxBounceYVelocity || bubbleTypes[this.type - 1].velocityFactor; //offset -1 to get the proper index
         // this.maxBounceYVelocity = UNIT / 7.45; //was 5.5 with UNIT 41
         this.hitStatus = false;
 

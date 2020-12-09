@@ -50,11 +50,14 @@ let timeInc;
 let timeRunning;
 let timeUp;
 
+const avatarHeadImg = new Image();
+avatarHeadImg.src = './images/avatarHead.png';
+avatarHeadImg.height = avatarHeadImg.width = UNIT * 1.75;
+
 let score;
 const scoreFactor = 3; //points per hit = bubbleType * scoreFactor
 const timeScoreFactor = 5; //used to calculate points for completing level in time
 const ceilingBonusFactor = 2;
-
 
 let avatar;
 let bubbles = [];
@@ -92,7 +95,7 @@ export function startNewGame() {
     bubbles = [];
 
     score = 0;
-    levelIndex = 0;
+    levelIndex = 5;
     timeUp = false;
     gameOn = true;
 
@@ -101,7 +104,7 @@ export function startNewGame() {
 
     // animate();
 }
-
+// console.log(avatarHeadImg);
 function repaint() {
     if (gameOn) {
         c.drawImage(levels[levelIndex].bgImg, 0, 0, canvas.width, canvas.height);
@@ -118,6 +121,24 @@ function repaint() {
         c.textAlign = 'center';
         c.textBaseline = 'top';
         c.fillText(`Level ${levelIndex + 1}`, UNIT * 3, field.height + hud.height / 2);
+
+        //lives
+        c.fillStyle = '#054263';
+        c.font = `${UNIT * 1.5}px ${gameFont}`;
+        c.textAlign = 'left';
+        c.textBaseline = 'top';
+        c.fillText('Lives:', field.width / 3, field.height + hud.height / 2);
+
+        let offset = 0; //offset to space the lives
+        for (let i = 0; i < avatar.lives; i++) {
+            c.drawImage(avatarHeadImg,
+                field.width / 2 - avatarHeadImg.width + offset,
+                field.height + hud.height / 2 - avatarHeadImg.height / 4,
+                avatarHeadImg.width,
+                avatarHeadImg.height);
+            offset += avatarHeadImg.width * 1.25;
+        }
+
 
         //score
         updateScore();
@@ -140,8 +161,8 @@ function repaint() {
                 avatar.gotHit = true;
                 avatar.lives--;
                 console.log('lives remaining', avatar.lives);
-                if(avatar.lives === 0){
-                endLevel();
+                if (avatar.lives === 0) {
+                    endLevel();
                 } else {
                     gameOn = false;
                     setTimeout(getNewLevel, 500);
@@ -195,14 +216,14 @@ function getNewLevel() {
     avatar.gotHit = false;
 
     levels[levelIndex].bubbles.forEach(bubble => {
+        
         bubbles.push(new Bubble(
-            {
-                field: field,
-                ctx: c,
-                color: bubble.bubbleColor,
-                offset: bubble.offset
-            }, UNIT, bubble.type
+            {field: field,
+            ctx: c}, 
+            bubble, 
+            UNIT
         ));
+        
     });
 }
 
@@ -248,26 +269,28 @@ function handleBeamCollision(index) {
     if (oldBubble.type > 1) { //if it's anything but the smallest type
         //create two new bubbles
         bubbles.push(new Bubble(
+            {field: field,
+            ctx: c},
             {
-                field: field,
-                ctx: c,
                 x: oldBubble.x,
                 y: oldBubble.y,
                 color: oldBubble.color,
                 velocityX: -Math.abs(oldBubble.velocityX),
-                velocityY: -Math.abs(oldBubble.maxBounceYVelocity * 0.7)
-            }, UNIT, (oldBubble.type - 1)
+                velocityY: -Math.abs(oldBubble.maxBounceYVelocity * 0.7),
+                type: oldBubble.type - 1
+            }, UNIT
         ));
         bubbles.push(new Bubble(
+            {field: field,
+                ctx: c},    
             {
-                field: field,
-                ctx: c,
                 x: oldBubble.x,
                 y: oldBubble.y,
                 color: oldBubble.color,
                 velocityX: Math.abs(oldBubble.velocityX),
-                velocityY: -Math.abs(oldBubble.maxBounceYVelocity * 0.7) //-Math.abs(oldBubble.velocityY)
-            }, UNIT, (oldBubble.type - 1)
+                velocityY: -Math.abs(oldBubble.maxBounceYVelocity * 0.7), //-Math.abs(oldBubble.velocityY)
+                type: oldBubble.type - 1
+            }, UNIT
         ));
     }
     if (!bubbles.length) {
