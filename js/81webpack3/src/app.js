@@ -48,6 +48,13 @@ function repaint() {
     //draw the bubbles
     circles.forEach(circle => circle.update());
 
+    c.fillStyle = 'rgba(0, 0, 109, 0.7)';
+    c.fillRect(UNIT * 2, UNIT * 3.2, canvas.width - (UNIT * 4), UNIT * 5);
+
+    c.fillStyle = '#fff705';
+    c.font = `${UNIT * 4}px Luckiest Guy`;
+    c.textAlign = 'center';
+    c.fillText('Bubble Trouble', canvas.width/2, canvas.height * 0.3);
 
     c.drawImage(avatarImg,
         canvas.width - avatarImg.width * 1.3,
