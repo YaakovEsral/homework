@@ -72,7 +72,7 @@ export class Bubble {
         // this.maxBounceYVelocity = UNIT / 7.45; //was 5.5 with UNIT 41
         this.hitStatus = false;
 
-        this.color = obj.color;
+        this.color = obj.bubbleColor;
         // this.incrementX = obj.incrementX;
         // this.incrementY = obj.incrementY;
     }
