@@ -12,9 +12,48 @@
 
 <body>
     <div id="buttonDiv">
-        <button id="startGame" class="btn1">Start Game</button>
+        <button id="startGameBtn" class="btn1">Start Game</button>
+        <button id="howToPlayBtn" class="btn1">How To Play</button>
+        <button id="aboutBtn" class="btn1">About</button>
     </div>
     <canvas id="canvas"></canvas>
+
+    <div id="howToPlayOverlay" class="modalOverlay hidden">
+        <div id="howToPlayBox" class="modalContent">
+            <span id="howToPlayExit" class="exitIcon">&#x2716;</span>
+            <h1>How To Play</h1>
+            <p>Clear all the bubbles to beat each level. Use the arrow keys to move
+                and the spacebar to shoot.
+            </p>
+
+        </div>
+    </div>
+
+    <div id="aboutOverlay" class="modalOverlay ">
+        <div id="aboutBox" class="modalContent">
+            <span id="aboutExit" class="exitIcon">&#x2716;</span>
+            <h1>About</h1>
+            <p>
+                This game is based on a game on Miniclip.
+                The original can be found <a target="_blank" href="https://www.miniclip.com/games/bubble-trouble/en/">HERE</a>.
+            </p>
+<!--             
+                This program incorporates many features to create the game:
+                different bubble sizes - saved in a bubbleTypes array in the Bubble.js file
+                levels - accessed via levels.json5 and the Level class,
+                a beam that can only shoot one line at a time,
+                bubble splitting - upon getting hit, the bubble will split into two smaller bubbles (except for the
+                smallest),
+                game loop - constant updating and repainting the screen with new positions for avatar, bubbles and beam,
+                heads up display - tracking and displaying the score and level number,
+                timer - a time tracker bar that will end the game upon running out
+
+                An additional feature of this version is that it will work for all screen sizes. This is done by means
+                of
+                a constant UNIT by which all measurements are made. The UNIT is based on the screen size at the time the
+                game is loaded. -->
+        </div>
+    </div>
     <!-- <script src="app3.js"></script> -->
 </body>
 

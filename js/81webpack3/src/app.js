@@ -13,6 +13,8 @@ function hide(elem) {
 }
 
 const buttonDiv = get('buttonDiv');
+const howToPlayOverlay = get('howToPlayOverlay');
+const aboutOverlay = get('aboutOverlay');
 
 const canvas = get('canvas');
 const c = canvas.getContext('2d');
@@ -54,12 +56,16 @@ function repaint() {
     );
 
 }
-get('startGame').addEventListener('click', () => {
+get('startGameBtn').addEventListener('click', () => {
     hide(buttonDiv);
     animationOn = false;
     cancelAnimationFrame(animationId);
     startNewGame();
 });
+
+get('howToPlayBtn').addEventListener('click', () => show(howToPlayOverlay) );
+
+get('aboutBtn').addEventListener('click', () => show(aboutOverlay) );
 
 //variables for largest possible circle radius, fastest possible speed and circles array
 const largestRadius = UNIT * 2.7;
@@ -151,3 +157,9 @@ export function startAnimation() {
 }
 
 bgImg.onload = startAnimation();
+
+
+//control the popup boxes
+get('howToPlayExit').addEventListener('click', () => hide(howToPlayOverlay));
+
+get('aboutExit').addEventListener('click', () => hide(aboutOverlay) );
