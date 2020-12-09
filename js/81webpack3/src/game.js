@@ -96,7 +96,7 @@ export function startNewGame() {
     bubbles = [];
 
     score = 0;
-    levelIndex = 0;
+    levelIndex = 7;
     timeUp = false;
     gameOn = true;
 
@@ -152,7 +152,8 @@ function repaint() {
             c.textAlign = 'center';
             c.fillText('TIME\'S UP!!!', field.width / 2, field.height / 3);
             timeUp = true;
-            endLevel();
+            // endLevel();
+            handleAvatarGettingOut();
         }
 
         //end level if a bubble hits the avatar
@@ -161,14 +162,7 @@ function repaint() {
                 bubbles[i].x - bubbles[i].radius < avatar.x + avatar.width - avatar.hitOffset &&
                 bubbles[i].y > avatar.y) {
                 avatar.gotHit = true;
-                avatar.lives--;
-                // console.log('lives remaining', avatar.lives);
-                if (avatar.lives === 0) {
-                    endLevel();
-                } else {
-                    gameOn = false;
-                    setTimeout(getNewLevel, 500);
-                }
+                handleAvatarGettingOut();
                 break;
             }
         }
@@ -217,6 +211,7 @@ function getNewLevel() {
     gameOn = true;
     bubbles = [];
     avatar.gotHit = false;
+    timeUp = false;
 
     levels[levelIndex].bubbles.forEach(bubble => {
         
@@ -357,6 +352,17 @@ function endLevel() {
         levelIndex++;
         getNewLevel();
     }, 1000);
+}
+
+function handleAvatarGettingOut() {
+    avatar.lives--;
+    // console.log('lives remaining', avatar.lives);
+    if (avatar.lives === 0) {
+        endLevel();
+    } else {
+        gameOn = false;
+        setTimeout(getNewLevel, 500);
+    }
 }
 
 function endGame() {
