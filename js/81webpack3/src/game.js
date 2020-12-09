@@ -68,6 +68,7 @@ for (let i = 0; i < json.length; i++) {
     levels[i] = new Level(json[i]);
 }
 
+let animationId;
 /*originally used to import all bg images at one time. now we are using CopyPlugin to 
 copy all images from original directory 'src/images' into 'dist/images'
 */
@@ -80,7 +81,7 @@ copy all images from original directory 'src/images' into 'dist/images'
 function animate() {
     // if (gameOn) { //may want to move this later to the actual loop
     repaint();
-    requestAnimationFrame(animate);
+    animationId = requestAnimationFrame(animate);
     // }
 }
 
@@ -101,11 +102,12 @@ export function startNewGame() {
 
     getNewLevel();
     levels[levelIndex].bgImg.onload = animate();
-
     // animate();
 }
 // console.log(avatarHeadImg);
 function repaint() {
+    // console.log(animationId, 'anim Id');
+
     if (gameOn) {
         c.drawImage(levels[levelIndex].bgImg, 0, 0, canvas.width, canvas.height);
 
@@ -363,6 +365,8 @@ function endGame() {
         c.textAlign = 'center';
         c.fillText('GAME OVER', field.width / 2, field.height / 2);
 
+        cancelAnimationFrame(animationId);
+        // console.log('just canceled', animationId);
         setTimeout(startAnimation, 2000);
     }, 500);
 

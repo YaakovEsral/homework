@@ -29,11 +29,12 @@ avatarImg.height = UNIT * 12;
 console.log(UNIT, 'unit');
 
 let animationOn = false;
+let animationId;
 
 function animate() {
     if (animationOn) {
         repaint();
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
     }
 }
 
@@ -56,6 +57,7 @@ function repaint() {
 get('startGame').addEventListener('click', () => {
     hide(buttonDiv);
     animationOn = false;
+    cancelAnimationFrame(animationId);
     startNewGame();
 });
 
