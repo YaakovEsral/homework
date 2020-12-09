@@ -120,6 +120,7 @@
                 }
             },
 
+
         ],
         "timeFactor": 90
     },
@@ -128,15 +129,123 @@
         bgImgSrc: './images/level7.png',
         "bubbles": [
             {
-                bubbleColor: '#a60303',
-                type: 5
+                bubbleColor: '#FF1205',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: true,
+                    val: 1
+                }
             },
             {
-                bubbleColor: '#e5f50c',
-                type: 4
-            }
+                bubbleColor: '#F59105',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: true,
+                    val: 7
+                }
+            },
+            {
+                bubbleColor: '#0094FF',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: true,
+                    val: 13
+                }
+            },
+            {
+                bubbleColor: '#009B21',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: true,
+                    val: 19
+                }
+            },
+            {
+                bubbleColor: '#B200FF',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: true,
+                    val: 25
+                }
+            },
+            {
+                bubbleColor: '#FF00DC',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: true,
+                    val: 31
+                }
+            },
+
+            {
+                bubbleColor: '#FF1205',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: false,
+                    val: 1
+                },
+                dirLeft: true
+            },
+            {
+                bubbleColor: '#F59105',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: false,
+                    val: 7
+                },
+                dirLeft: true
+            },
+            {
+                bubbleColor: '#0094FF',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: false,
+                    val: 13
+                },
+                dirLeft: true
+            },
+            {
+                bubbleColor: '#009B21',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: false,
+                    val: 19
+                },
+                dirLeft: true
+            },
+            {
+                bubbleColor: '#B200FF',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: false,
+                    val: 25
+                },
+                dirLeft: true
+            },
+            {
+                bubbleColor: '#FF00DC',
+                type: 1,
+                maxBounceYVelocity: 5,
+                offset: {
+                    left: false,
+                    val: 31
+                },
+                dirLeft: true
+            },
+
         ],
-        "timeFactor": 270
+        "timeFactor": 50
     },
 
         {
