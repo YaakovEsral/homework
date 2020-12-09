@@ -96,7 +96,7 @@ export function startNewGame() {
     bubbles = [];
 
     score = 0;
-    levelIndex = 0;
+    levelIndex = 1;
     timeUp = false;
     gameOn = true;
 
@@ -272,7 +272,7 @@ function handleBeamCollision(index) {
             {
                 x: oldBubble.x,
                 y: oldBubble.y,
-                color: oldBubble.color,
+                bubbleColor: oldBubble.color,
                 velocityX: -Math.abs(oldBubble.velocityX),
                 velocityY: -Math.abs(oldBubble.maxBounceYVelocity * 0.7),
                 type: oldBubble.type - 1
@@ -284,7 +284,7 @@ function handleBeamCollision(index) {
             {
                 x: oldBubble.x,
                 y: oldBubble.y,
-                color: oldBubble.color,
+                bubbleColor: oldBubble.color,
                 velocityX: Math.abs(oldBubble.velocityX),
                 velocityY: -Math.abs(oldBubble.maxBounceYVelocity * 0.7), //-Math.abs(oldBubble.velocityY)
                 type: oldBubble.type - 1
