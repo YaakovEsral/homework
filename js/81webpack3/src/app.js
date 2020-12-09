@@ -62,8 +62,8 @@ get('startGame').addEventListener('click', () => {
 });
 
 //variables for largest possible circle radius, fastest possible speed and circles array
-const largestRadius = 75;
-const fastestSpeed = 8;
+const largestRadius = UNIT * 2.7;
+const fastestSpeed = UNIT / 3.375;
 let circles = [];
 
 class Circle {

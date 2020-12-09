@@ -162,13 +162,14 @@ function repaint() {
                 bubbles[i].y > avatar.y) {
                 avatar.gotHit = true;
                 avatar.lives--;
-                console.log('lives remaining', avatar.lives);
+                // console.log('lives remaining', avatar.lives);
                 if (avatar.lives === 0) {
                     endLevel();
                 } else {
                     gameOn = false;
                     setTimeout(getNewLevel, 500);
                 }
+                break;
             }
         }
 
