@@ -68,7 +68,7 @@ export class Bubble {
         }
 
         this.gravity = UNIT / 410; //was 0.1 with UNIT 41
-        this.maxBounceYVelocity = UNIT / obj.maxBounceYVelocity || bubbleTypes[this.type - 1].velocityFactor; //offset -1 to get the proper index
+        this.maxBounceYVelocity = UNIT / (obj.maxBounceYVelocity || bubbleTypes[this.type - 1].velocityFactor); //offset -1 to get the proper index
         // this.maxBounceYVelocity = UNIT / 7.45; //was 5.5 with UNIT 41
         this.hitStatus = false;
 
