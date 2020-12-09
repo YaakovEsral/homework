@@ -96,7 +96,7 @@ export function startNewGame() {
     bubbles = [];
 
     score = 0;
-    levelIndex = 6;
+    levelIndex = 0;
     timeUp = false;
     gameOn = true;
 
@@ -356,6 +356,7 @@ function endLevel() {
 
 function handleAvatarGettingOut() {
     avatar.lives--;
+    avatar.resetBeam();
     // console.log('lives remaining', avatar.lives);
     if (avatar.lives === 0) {
         endLevel();
