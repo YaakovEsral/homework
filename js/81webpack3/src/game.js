@@ -96,7 +96,7 @@ export function startNewGame() {
     bubbles = [];
 
     score = 0;
-    levelIndex = 5;
+    levelIndex = 0;
     timeUp = false;
     gameOn = true;
 
