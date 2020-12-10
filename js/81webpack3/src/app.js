@@ -54,6 +54,8 @@ function repaint() {
     c.fillStyle = '#fff705';
     c.font = `${UNIT * 4}px Luckiest Guy`;
     c.textAlign = 'center';
+    c.textBaseline = 'alphabetic';
+    // console.log(c);
     c.fillText('Bubble Trouble', canvas.width/2, canvas.height * 0.3);
 
     c.drawImage(avatarImg,
