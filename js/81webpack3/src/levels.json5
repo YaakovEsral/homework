@@ -76,7 +76,7 @@
         bgImgSrc: './images/level6.png',
         "bubbles": [
             {
-                bubbleColor: '#42FF21',
+                bubbleColor: '#390170',
                 type: 2,
                 maxBounceYVelocity: 3.6,
                 offset: {
@@ -85,7 +85,7 @@
                 }
             },
             {
-                bubbleColor: '#42FF21',
+                bubbleColor: '#390170',
                 type: 2,
                 maxBounceYVelocity: 3.6,
                 offset: {
@@ -94,7 +94,7 @@
                 }
             },
             {
-                bubbleColor: '#42FF21',
+                bubbleColor: '#390170',
                 type: 2,
                 maxBounceYVelocity: 3.6,
                 offset: {
@@ -102,7 +102,7 @@
                     val: 4.5
                 }
             },            {
-                bubbleColor: '#42FF21',
+                bubbleColor: '#390170',
                 type: 2,
                 maxBounceYVelocity: 3.6,
                 offset: {
@@ -111,7 +111,7 @@
                 }
             },
             {
-                bubbleColor: '#42FF21',
+                bubbleColor: '#390170',
                 type: 2,
                 maxBounceYVelocity: 3.6,
                 offset: {
