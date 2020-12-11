@@ -1,4 +1,6 @@
-import { startNewGame, UNIT } from './game';
+import { startNewGame, UNIT, setLevelIndex } from './game';
+import jsonLevels from './levels.json5';
+
 
 function get(id) {
     return document.getElementById(id);
@@ -15,6 +17,8 @@ function hide(elem) {
 const buttonDiv = get('buttonDiv');
 const howToPlayOverlay = get('howToPlayOverlay');
 const aboutOverlay = get('aboutOverlay');
+const devBtn = get('devBtn');
+const developerOverlay = get('developerOverlay');
 
 const canvas = get('canvas');
 const c = canvas.getContext('2d');
@@ -29,6 +33,9 @@ avatarImg.src = './images/mainAvatar.png';
 avatarImg.width = UNIT * 8;
 avatarImg.height = UNIT * 12;
 console.log(UNIT, 'unit');
+
+setLevelIndex(0);
+
 
 let animationOn = false;
 let animationId;
@@ -65,16 +72,36 @@ function repaint() {
     );
 
 }
-get('startGameBtn').addEventListener('click', () => {
+
+function clearAnimationAndStartGame() {
     hide(buttonDiv);
+    hide(devBtn);
     animationOn = false;
     cancelAnimationFrame(animationId);
     startNewGame();
-});
+
+}
+get('startGameBtn').addEventListener('click', clearAnimationAndStartGame);
 
 get('howToPlayBtn').addEventListener('click', () => show(howToPlayOverlay) );
 
 get('aboutBtn').addEventListener('click', () => show(aboutOverlay) );
+
+devBtn.addEventListener('click', () => show(developerOverlay));
+
+for (let i = 0; i < jsonLevels.length; i++) {
+    const elem = document.createElement('li');
+    elem.innerText = i + 1;
+    elem.addEventListener('click', () =>{
+        setLevelIndex(i);
+
+        hide(developerOverlay);
+        // startNewGame();
+        clearAnimationAndStartGame();
+    });
+    get('devLevelSelect').appendChild(elem);
+}
+
 
 //variables for largest possible circle radius, fastest possible speed and circles array
 const largestRadius = UNIT * 2.7;
@@ -162,6 +189,7 @@ for (let i = 0; i < 50; i++) {
 export function startAnimation() {
     animationOn = true;
     show(buttonDiv);
+    show(devBtn);
     animate();
 }
 
@@ -172,3 +200,5 @@ bgImg.onload = startAnimation();
 get('howToPlayExit').addEventListener('click', () => hide(howToPlayOverlay));
 
 get('aboutExit').addEventListener('click', () => hide(aboutOverlay) );
+
+get('developerExit').addEventListener('click', () => hide(developerOverlay));

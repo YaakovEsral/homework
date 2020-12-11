@@ -16,7 +16,13 @@
         <button id="howToPlayBtn" class="btn1">How To Play</button>
         <button id="aboutBtn" class="btn1">About</button>
     </div>
-    <canvas id="canvas"></canvas>
+
+    <div id="container">
+    <canvas id="canvas">
+        
+    </canvas>
+    <img id="devBtn" src="images/settings.png" class="invisible">
+</div>
 
     <div id="howToPlayOverlay" class="modalOverlay hidden">
         <div id="howToPlayBox" class="modalContent">
@@ -52,6 +58,25 @@
                 of
                 a constant UNIT by which all measurements are made. The UNIT is based on the screen size at the time the
                 game is loaded. -->
+        </div>
+    </div>
+
+    <div id="developerOverlay" class="modalOverlay hidden">
+        <div id="developerBox" class="modalContent">
+            <span id="developerExit" class="exitIcon">&#x2716;</span>
+            <h1>Wow! You must be a developer!</h1>
+            
+            <p>Select a level to start from:</p>
+            <ul id="devLevelSelect">
+                <!-- <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li> -->
+            </ul>
         </div>
     </div>
     <!-- <script src="app3.js"></script> -->

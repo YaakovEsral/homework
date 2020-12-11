@@ -11,6 +11,12 @@ body {
     overflow: hidden;
     position: relative;
 }
+
+#container {
+    display: inline-block;
+    position: relative;
+}
+
 canvas {
     /* border: 1px solid black; */
     margin: auto;
@@ -38,7 +44,7 @@ canvas {
     /* text-align: center; */
     margin: auto;
     max-width: 185px;
-
+    z-index: 1;
 }
 
 button {
@@ -73,7 +79,7 @@ button {
     top: 22%;
     text-align: center;
     width: 400px;
-    height: 240px;
+    min-height: 240px;
     /* height: 312px; */
     background: #fff705;
     /* background: #FDFDFD; */
@@ -103,6 +109,41 @@ button {
     margin: 0 1em;
 }
 
+#devBtn {
+    position: absolute;
+    left: 2%;
+    top: 3%;
+    cursor: pointer;
+    transition: .4s opacity;
+}
+
+#devBtn:hover {
+    opacity: 1;
+}
+
+ul#devLevelSelect {
+    list-style-type: none;
+    padding: 0;
+    width: 61%;
+    margin: .5em auto;
+}
+
+li {
+    font-size: 1.5em;
+    width: .5em;
+    display: inline-block;
+    margin: 0 .25em .5em;
+    padding: 0 .5em;
+    border: 1px solid #3F51B5;
+    border-radius: 5px;
+    background: #82c3e2;
+    cursor: pointer;
+}
+
 .hidden {
     display: none;
+}
+
+.invisible {
+    opacity: 0;
 }

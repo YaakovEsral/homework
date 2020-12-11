@@ -1,9 +1,9 @@
 import './css/style.css';
 import { Avatar } from './avatar';
 import { Bubble } from './bubble';
-import { bubbleTypes } from './bubble';
+// import { bubbleTypes } from './bubble';
 import { Level } from './level';
-import json from './levels.json5';
+import jsonLevels from './levels.json5';
 import { startAnimation } from './app';
 
 function get(id) {
@@ -62,11 +62,19 @@ const ceilingBonusFactor = 2;
 let avatar;
 let bubbles = [];
 
-let levelIndex;
+
 const levels = [];
-for (let i = 0; i < json.length; i++) {
-    levels[i] = new Level(json[i]);
+for (let i = 0; i < jsonLevels.length; i++) {
+    levels[i] = new Level(jsonLevels[i]);
 }
+
+let levelIndex;
+export function setLevelIndex(i){
+    if(i >= 0 && i < levels.length){
+        levelIndex = i;
+    }    
+}
+
 
 let animationId;
 /*originally used to import all bg images at one time. now we are using CopyPlugin to 
@@ -96,7 +104,10 @@ export function startNewGame() {
     bubbles = [];
 
     score = 0;
-    levelIndex = 0;
+    if(!levelIndex){
+        levelIndex = 0;
+    }
+
     timeUp = false;
     gameOn = true;
 
