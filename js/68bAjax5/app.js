@@ -4,8 +4,10 @@
         return document.getElementById(id);
     }
 
-    const locationKey = 'dfe8c72f67538b&lat';
-    const weatherKey = 'fb79b6e6b1199c27455668afe998b540';
+    //see keys.txt file for keys
+
+    const locationKey = '';
+    const weatherKey = '';
 
     const spinner = document.getElementsByClassName('spinner');
     const spinners = Array.from(spinner);
