@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --primary-color: #567FA4;
+    --secondary-color: #8EAEDA;
+    --bg-color: #F2D2A5;
+    --alt-color-1: #DEAB47;
+    --alt-color-2: #997653;
+}
+
+/* UTILITY CLASSES */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.grid-container {
+    display: grid;
+}
+
+/* site wide styles */
+* {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 80vw;
+    margin: auto;
+    background-color: var(--bg-color);
+}
+
+nav {
+    margin-top: 1em;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Main page style */
+
+/* default style - more than 600px */
+#home-main-content {
+    grid-template-columns: repeat(3, 250px);
+    grid-auto-rows: auto;
+    justify-content: center;
+    gap: 4vw;
+}
+
+@media screen and (max-width: 900px){
+    #home-main-content {
+        grid-template-columns: repeat(2, 250px);
+        gap: 1em;
+    }    
+}
+
+
+@media screen and (max-width: 600px){
+    #home-main-content {
+        grid-template-columns: 250px;
+    }
+}
+
+
+.single-blogger-display {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 3px;
+    padding: .5em;
+    text-align: center;
+}
+
+.single-blogger-display button {
+    font-size: 1em;
+    padding: .1em 1em;
+}
