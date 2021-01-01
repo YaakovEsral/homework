@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --primary-color: #567FA4;
+    --secondary-color: #8EAEDA;
+    --bg-color: #F2D2A5;
+    --alt-color-1: #DEAB47;
+    --alt-color-2: #997653;
+}
+
+/* UTILITY CLASSES */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.grid-container {
+    display: grid;
+}
+
+/* site wide styles */
+* {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 80vw;
+    margin: auto;
+    background-color: var(--bg-color);
+}
+
+nav {
+    margin-top: 1em;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav ul li, button {
+    cursor: pointer;
+}
+
+/* Main page style */
+
+/* default style - more than 600px */
+.grid-container {
+    grid-template-columns: repeat(3, 250px);
+    grid-auto-rows: auto;
+    justify-content: center;
+    gap: 4vw;
+}
+
+@media screen and (max-width: 900px){
+    .grid-container {
+        grid-template-columns: repeat(2, 250px);
+        gap: 1em;
+    }    
+}
+
+
+@media screen and (max-width: 600px){
+    .grid-container {
+        grid-template-columns: 250px;
+    }
+}
+
+/* same style for home page and post list page grid items */
+.single-blogger-display, .posts-list-item {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 3px;
+    padding: .5em;
+    text-align: center;
+}
+
+.single-blogger-display button {
+    font-size: 1em;
+    padding: .1em 1em;
+}
+
+/* Posts list styles */
+#post-list-container {
+    grid-auto-rows: 8em;
+    gap: 1em;
+}
+
+#posts-list-header {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.posts-list-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* single post styles */
+
+#toggle-comments-btn {
+    margin-top: 2em;
+}
+
+hr#comments-hr {
+    border: 1px solid var(--primary-color);
+}
+
+hr.single-comment-hr {
+    border-top: 1px solid var(--secondary-color)
+}
