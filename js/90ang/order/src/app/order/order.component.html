@@ -1,13 +1,14 @@
-<h3>Order Description</h3>
+<div class="grid-container" id="orders-container">
+    <div *ngFor="let order of orders" id="full-order">
+        <h3>Order Description</h3>
+        <div id="order-description">
+            <app-item [item]="order.item"></app-item>
+        </div>
 
-<div id="order-description">
-    <app-item [item]="order.item"></app-item>
+        <h3>Shipping Information</h3>
+
+        <app-person [person]="order.person"></app-person>
+
+        <app-address [address]="order.address"></app-address>
+    </div>
 </div>
-
-<hr>
-
-<h3>Shipping Information</h3>
-
-<app-person [person]="order.person"></app-person>
-
-<app-address [address]="order.address"></app-address>

@@ -7,10 +7,36 @@ body {
     background-color: rgb(245, 225, 111);
 }
 
-#main-container {
-    height: 100vh;
-    width: 100vw;
+.grid-container {
+    width: 80%;
+    margin: auto;
+    display: grid;
 }
+
+/* media queries */
+
+/* default style - more than 600px */
+.grid-container {
+    grid-template-columns: repeat(3, 250px);
+    grid-auto-rows: auto;
+    justify-content: center;
+    gap: 4vw;
+}
+
+@media screen and (max-width: 900px){
+    .grid-container {
+        grid-template-columns: repeat(2, 250px);
+        gap: 1em;
+    }    
+}
+
+
+@media screen and (max-width: 600px){
+    .grid-container {
+        grid-template-columns: 250px;
+    }
+}
+
 
 .container {
     display: flex;

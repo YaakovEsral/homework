@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { orders } from '../orders';
 import Item from '../shared/item';
 import { Order } from '../shared/order';
 
@@ -7,28 +8,14 @@ import { Order } from '../shared/order';
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
-export class OrderComponent {
+export class OrderComponent implements OnInit{
+    orders = orders;
 
-    order: Order = {
-        person: {
-            firstName: 'Yaakov',
-            lastName: 'Esral',
-            age: 24 
-        },
-        address: {
-            street: '4800 Park Heights Ave.',
-            city: 'Baltimore', 
-            state: 'MD', 
-            zip: '21208'
-        },
-        item: {
-            name: 'Speaker',
-            price: 25.49,
-            quantity: 1
-        },
-
-        date: '01/12/21'
+    ngOnInit() {
+        console.log(orders);
         
     }
+
+        
 
 }

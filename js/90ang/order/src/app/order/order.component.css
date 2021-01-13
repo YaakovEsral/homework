@@ -1,0 +1,9 @@
+#orders-container {
+    gap: .5em;
+}
+
+#full-order {
+    border: 2px solid rgb(223, 165, 59);
+    border-radius: 3px;
+    padding: 1em;
+}
