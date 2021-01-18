@@ -1,0 +1,5 @@
+<div id="categories-container">
+    <div *ngFor="let c of categories; let i = index" (click)="handleClick(i)">
+        {{c.category}}
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="item">
+    <div class="item-name">{{item.name}}</div>
+    <div *ngIf="item.subtitle" class="item-subtitle">
+        {{ item.subtitle }}
+    </div>
+    <button (click)="handleDelete(index)">Remove</button>
+</div>
+
+<hr>

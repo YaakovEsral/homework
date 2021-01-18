@@ -1,0 +1,25 @@
+<h2>Select a category:</h2>
+
+
+<app-category (categorySelectEvent)="displayCategory($event)" [categories]="categories"></app-category>
+
+
+<div id="items-container" *ngIf="items">
+    <div *ngIf="items.length; else elseBlock">
+        <div *ngFor="let item of items; let i = index">
+            <!-- {{ item.name }} -->
+            <app-item [item]="item" [index]="i" (deleteEvent)="deleteItem($event)"></app-item>
+        </div>
+    </div>
+    <ng-template #elseBlock>
+        <div>
+            There are no items in that category.
+        </div>
+    </ng-template>
+    <form>
+        <input #newItemName placeholder="name" required>
+        <input #newItemSubtitle placeholder="subtitle">
+        <button (click)="addItem($event, {name: newItemName.value, subtitle: newItemSubtitle.value})">Add item</button>
+
+    </form>
+</div>

@@ -1,0 +1,23 @@
+#categories-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+#categories-container div{
+    text-transform: capitalize;
+    background-color: rgb(231, 222, 222);
+    padding: .25em 1em;
+    width: 3em;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#categories-container div:hover {
+    background-color: rgb(248, 245, 245);
+    border: 1px solid #ccc;
+}
