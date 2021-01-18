@@ -1,9 +1,10 @@
 <div class="item">
-    <div class="item-name">{{item.name}}</div>
+    <div class="item-name">{{item.name | titlecase}}</div>
     <div *ngIf="item.subtitle" class="item-subtitle">
         {{ item.subtitle }}
     </div>
+    <div *ngIf="item.price" class="item-price">
+        {{ item.price | currency }}
+    </div>
     <button (click)="handleDelete(index)">Remove</button>
 </div>
-
-<hr>

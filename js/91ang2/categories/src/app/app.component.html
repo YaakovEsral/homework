@@ -4,12 +4,12 @@
 <app-category (categorySelectEvent)="displayCategory($event)" [categories]="categories"></app-category>
 
 
-<div id="items-container" *ngIf="items">
-    <div *ngIf="items.length; else elseBlock">
-        <div *ngFor="let item of items; let i = index">
+<div *ngIf="items">
+    <div id="items-container"  *ngIf="items.length; else elseBlock">
+        <ng-container *ngFor="let item of items; let i = index">
             <!-- {{ item.name }} -->
             <app-item [item]="item" [index]="i" (deleteEvent)="deleteItem($event)"></app-item>
-        </div>
+        </ng-container>
     </div>
     <ng-template #elseBlock>
         <div>

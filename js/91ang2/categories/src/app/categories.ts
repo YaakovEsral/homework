@@ -13,22 +13,26 @@ export const categories: Category[] = [
             {
                 name: 'How to Win Friends and Influence People',
                 subtitle: 'Dale Carnegie', 
-                type: 'book'
+                type: 'book',
+                price: 20
             },
             {
                 name: 'Mindset',
                 subtitle: 'Carol Dweck',
-                type: 'book'
+                type: 'book',
+                price: 15
             },
             {
                 name: 'A Grief Observed',
                 subtitle: 'C.S. Lewis',
-                type: 'book'
+                type: 'book',
+                price: 12
             },
             {
                 name: 'Frankenstein',
                 subtitle: 'Mary Shelley',
-                type: 'book'
+                type: 'book',
+                price: 14
             }
         ]
     },
@@ -36,16 +40,20 @@ export const categories: Category[] = [
         category: 'clothing',
         items: [
             {
-                name: 'shirt'
+                name: 'shirt',
+                price: 29
             },
             {
-                name: 'pants'
+                name: 'pants',
+                price: 32
             },
             {
-                name: 'tie'
+                name: 'tie',
+                price: 20
             },
             {
-                name: 'belt'
+                name: 'belt',
+                price: 25
             }
         ]
     },
@@ -53,16 +61,20 @@ export const categories: Category[] = [
         category: 'sports',
         items: [
             {
-                name: 'Baseball'
+                name: 'Baseball',
+                price: 5
             },
             {
-                name: 'Basketball'
+                name: 'Basketball',
+                price: 16
             },
             {
-                name: 'Ping Pong paddle'
+                name: 'Ping Pong paddle',
+                price: 5
             },
             {
-                name: 'Golf clubs'
+                name: 'Golf clubs',
+                price: 40
             }
         ]
     }
