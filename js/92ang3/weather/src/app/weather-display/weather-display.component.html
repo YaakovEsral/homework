@@ -1,0 +1,8 @@
+<ng-container *ngIf="weatherData">
+    <div>Showing weather for {{weatherData.name}}, {{weatherData.sys.country}} on {{ getDate() | date: 'shortDate'}} at {{getDate() | date: 'mediumTime'}}</div>
+    <div>Temperature: {{weatherData.main.temp}}</div>
+    <div>{{weatherData.weather[0].description}}</div>
+    <div></div>
+    <div></div>
+    <div></div>
+</ng-container>

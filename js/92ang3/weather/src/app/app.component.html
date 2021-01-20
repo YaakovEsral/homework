@@ -1,0 +1,12 @@
+<div class="container flex-column">
+    <h1>Get the Weather!</h1>
+
+    <!-- <input (keyup)="getWeather(zip.value)" #zip> -->
+
+    <form (ngSubmit)="getWeather(zip)">
+        <input name="zip" [(ngModel)]="zip" placeholder="Enter a zip code...">
+        <button>Get Weather</button>
+    </form>
+
+    <app-weather-display [weatherData]="weatherData"></app-weather-display>
+</div>
