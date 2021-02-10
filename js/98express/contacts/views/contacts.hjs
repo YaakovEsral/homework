@@ -1,0 +1,10 @@
+<form action="/api/contacts" method="POST">
+    Name: <input name="name" type="text">
+    Email: <input name="email" type="email">
+    <input type="submit" value="Add">
+</form>
+<ul>
+    {{#contacts}}
+    <li><b>Name:</b> {{name}} | <b>Email:</b>{{email}}</li>
+    {{/contacts}}
+</ul>
