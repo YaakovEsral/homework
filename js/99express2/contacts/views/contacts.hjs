@@ -1,0 +1,39 @@
+<link rel='stylesheet' href='/stylesheets/contacts.css' />
+
+<a class="btn" href="/contacts/addContact">add contact</a>
+<table id="contacts">
+    <thead>
+        <tr>
+            <th>first</th>
+            <th>last</th>
+            <th>email</th>
+            <th>phone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#noContacts}}
+        <tr>
+            <td colspan="5">no contacts loaded</td>
+        </tr>
+        {{/noContacts}}
+        {{#contacts}}
+        <tr>
+            <td>{{firstName}}</td>
+            <td>{{lastName}}</td>
+            <td>{{email}}</td>
+            <td>{{phone}}</td>
+            <td>
+                <!-- first method using link -->
+                <!--a class="btn" href='/contacts/deleteContact/{{id}}'>delete</a-->
+                <!-- second method using post from a form -->
+                <form action="contacts/deleteContact/{{id}}" method="POST">
+                    <input type="hidden" name="deletedContact">
+                    <input type="submit" value="delete">
+                </form>
+                <a class="btn" href="/contacts/editContact/{{id}}">edit contact</a>
+            </td>
+        </tr>
+        {{/contacts}}
+    </tbody>
+</table>
