@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <nav id="navbar" class="container">
+        <a class="btn1" href="/">Home</a>
+                <a class="btn1" href="./game">Play Game</a>
+
+        <a class="btn1" href="./login">Login</a>
+    </nav>
+    <main class="container flex-column">
+        {{>content}}
+    </main>
+
+
+</body>
+
+</html>
