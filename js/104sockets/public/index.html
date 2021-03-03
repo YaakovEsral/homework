@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="loginFormDiv">
+            <div id="loginErrorMessage">
+                <!-- Error -->
+            </div>
+            <form id="loginForm">
+                <input id="usernameInput" autofocus placeholder="Enter your name">
+                <button>Join</button>
+            </form>
+        </div>
+
+
+        <div id="chatWindow" class="hidden">
+            <div id="chatHeader">
+                <h3>Chat Bot</h3>
+                <span>&#10006;</span>
+            </div>
+            <div id="chatBody">
+                <!-- <div class="messageContainer">
+                    <div class="messageWriter">Yaakov wrote:</div>
+                    <div class="messageTime">9:45</div>
+                    <div class="messageText">foo</div>
+                </div> -->
+            </div>
+            <div id="chatTypingMessage">
+                <!-- Yaakov is typing... -->
+            </div>
+            <div id="chatInput">
+                <div id="chatRecipient">
+                    <label for="recipient">Send to: </label>
+                    <select name="recipient" id="recipientSelection">
+                        <option value="Everyone">Everyone</option>
+                        <!-- <option value="jake">Jake</option> -->
+                    </select>
+                </div>
+                <form id="chatInputForm">
+                    <textarea id="messageInput" rows="2" autofocus></textarea>
+                    <button>Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/Message.js" type="module"></script>
+    <script src="/js/chat.js"></script>
+</body>
+
+</html>
