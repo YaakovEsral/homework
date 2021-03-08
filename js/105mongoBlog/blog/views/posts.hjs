@@ -1,0 +1,26 @@
+{{#posts}}
+<div class="post">
+    <h2>{{title}}</h2>
+    <h3>by {{author}} on {{date}}</h3>
+    {{body}}
+    <hr>
+    <h4>Comments</h4>
+    {{#comments}}
+    <div class="comment">
+        <p>by {{name}} - {{timestamp}}</p>
+        <p>{{body}}</p>
+    </div>
+    <div class="comment-divider"></div>
+    {{/comments}}
+</div>
+
+<button class="showCommentFormBtn">Add Comment</button>
+
+<form class="commentForm hidden" method="POST" action="/submitComment">
+    <input name="name" id="commenterName" placeholder="Enter your name...">
+    <textarea name="body" id="commentBody" placeholder="Enter your comment..."></textarea>
+    <input name="postId" id="postId" type="hidden" value="{{_id}}">
+    <button>Submit Comment</button>
+</form>
+{{/posts}}
+<script src="/javascript/posts.js"></script>

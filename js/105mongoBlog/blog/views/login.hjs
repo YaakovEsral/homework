@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/stylesheets/login.css">
+<link rel="stylesheet" href="/stylesheets/createAccount.css">
+
+{{#message}}
+<p>{{message}}</p>
+{{/message}}
+
+<form id="loginForm" method="POST">
+    <div>
+        <label for="username">Name: </label>
+        <input type="text" name="username"> <br>
+    </div>
+    <div>
+        <label for="password">Password: </label>
+        <input type="password" name="password">
+    </div>
+    <button>Enter</button>
+</form>
+
+<p>Don't have an account? <span id="createAccountBtn">Create one</span> today.</p>
+
+<div class="modalOverlay hidden">
+    <div class="modalContent" id="createAccountBox">
+        <form id="createAccountForm">
+            <span id="x-icon">&#10006;</span>
+            <h3>Enter your user information to create an account: </h3>
+            <input class="input1" type="text" name="username" placeholder="Username">
+            {{!-- <input class="input1" type="password" name="password" placeholder="Password"> --}}
+            {{#formValidationMessage}}
+            <p>{{formValidationMessage}}</p>
+            {{/formValidationMessage}}
+            <button id="createAccountSubmitBtn" class="btn3">Create Account</button>
+        </form>
+    </div>
+</div>
+
+<script src="/javascripts/createAccount.js"></script>
+<script>
+    const socket = new WebSocket('ws://localhost:3000');
+
+    socket.addEventListener('close', () => {
+        console.log('connection closed')
+        { { !--location.reload(); --} }
+    })
+</script>
