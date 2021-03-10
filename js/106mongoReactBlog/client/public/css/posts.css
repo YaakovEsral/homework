@@ -1,0 +1,34 @@
+header {
+    border: 1px solid rgb(21, 21, 153);
+    background-color: rgb(134, 208, 233);
+    padding: 1em;
+    text-align: center;
+    border-radius: 8px;
+}
+
+input, textarea {
+    display: block;
+}
+
+input, button, textarea {
+    margin-bottom: .5em;
+}
+
+textarea {
+    width: 25em;
+    resize: none;
+}
+
+.comment {
+    background: #c7c3c3;
+    padding: .25em;
+}
+
+.comment-divider:not(:last-of-type) {
+    height: 2px;
+    background: #736a6a;
+}
+
+.showCommentFormBtn {
+    margin-top: .5em;
+}

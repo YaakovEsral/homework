@@ -1,0 +1,40 @@
+form#loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 265px;
+    margin: auto;
+    margin-top: 1.5em;
+}
+
+form#loginForm, 
+form#loginForm *:not(:last-child) {
+    margin-bottom: .35em;
+}
+
+form#loginForm div {
+    margin: auto;
+    text-align: center;
+}
+
+form#loginForm label {
+    display: inline-block;
+    width: 5em;
+    margin-right: .5em;
+    text-align: right;
+}
+
+form#loginForm button {
+    align-self: flex-end;
+}
+
+#createAccountCTA {
+    text-align: center;
+}
+
+span#createAccountBtn {
+    font-weight: bold;
+    cursor: pointer;
+    color: #117311;
+}
