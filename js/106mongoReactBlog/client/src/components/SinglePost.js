@@ -16,9 +16,9 @@ export default function SinglePost({postData}) {
             <main>{postData.body}</main>
 
             <button className="showCommentFormBtn" onClick={() => setCommentFormShowing(true)}>Add Comment</button>
-
-            <CommentsDisplay comments={postData.comments} />
             {commentForm}
+            <CommentsDisplay comments={postData.comments} />
+            
 
         </div>
     )

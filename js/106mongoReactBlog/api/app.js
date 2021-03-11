@@ -57,7 +57,7 @@ app.route('/submitPost')
 app.post('/addComment/:id', async (req, res, next) => {
     const newComment = {
         body: req.body.body,
-        author: 'foo',
+        author: 'you',
         date: new Date().toLocaleString()
     };
 

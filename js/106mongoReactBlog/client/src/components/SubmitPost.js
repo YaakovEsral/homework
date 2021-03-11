@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import MessageBox from './MessageBox';
 import { useHistory } from 'react-router-dom';
 
 export default function SubmitPost() {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
+    const [messageBoxDisplay, setMessageBoxDisplay] = useState(false);
     const history = useHistory();
     // console.log(form.elements);
 
@@ -51,9 +53,12 @@ export default function SubmitPost() {
         // console.log(response.status);
         if(response.status === 201) {
             console.log('thanks for your submission, redirecting you ...');
-            setTimeout(() =>history.push('/'), 1000);
+            // setTimeout(() =>history.push('/'), 1000);
+
         }
     }
+
+    const messageBox = <MessageBox />;
 
     return (
         <>
@@ -67,6 +72,8 @@ export default function SubmitPost() {
                 </label>
                 <button>Add Post</button>
             </form>
+
+            {messageBox}
         </>
     )
 }

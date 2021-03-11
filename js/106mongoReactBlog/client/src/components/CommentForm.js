@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import MessageBox from './MessageBox';
 
 
-export default function CommentForm({id, setCommentFormShowing}) {
+export default function CommentForm({ id, setCommentFormShowing }) {
 
     const [name, setName] = useState('');
     const [body, setBody] = useState('');
- 
+
+    
+
     function handleInput(e) {
         // console.log(e.target.name);
         switch (e.target.name) {
@@ -44,24 +47,30 @@ export default function CommentForm({id, setCommentFormShowing}) {
                 console.log(err);
             })
 
-        const json  = await response.json();
+        const json = await response.json();
         console.log('response', response);
-        
+
         if (response.status === 201) {
+
             console.log('thanks for your comment...');
             // setTimeout(() => history.push('/'), 1000)
         }
     }
     
+    const [boxShowing, setBoxShowing] = useState(false);
+    const messageBoxDisplay = boxShowing ? <MessageBox hide={() => setBoxShowing(false)} /> : null;
     
     return (
-
-        <form className="commentForm" method="POST" action="http:localhost/submitComment" onSubmit={e =>handleSubmit(e)}>
-            <input name="name" id="commenterName" placeholder="Enter your name..." onChange={e =>handleInput(e)} />
-            <textarea name="body" id="commentBody" placeholder="Enter your comment..." onChange={e =>handleInput(e)}></textarea>
-            <input name="postId" id="postId" type="hidden" value={id} />
-            <button type="button" onClick={() => setCommentFormShowing(false)}>Cancel</button>
-            <button type="submit">Submit Comment</button>
-        </form>
+        <>
+            <form className="commentForm" method="POST" action="http:localhost/submitComment" onSubmit={e => handleSubmit(e)}>
+                <input name="name" id="commenterName" placeholder="Enter your name..." onChange={e => handleInput(e)} />
+                <textarea name="body" id="commentBody" placeholder="Enter your comment..." onChange={e => handleInput(e)}></textarea>
+                <input name="postId" id="postId" type="hidden" value={id} />
+                <button type="button" onClick={() => setCommentFormShowing(false)}>Cancel</button>
+                <button type="submit">Submit Comment</button>
+                <button type="button" onClick={() => setBoxShowing(true)}>Test</button>
+            </form>
+            {messageBoxDisplay}
+        </>
     )
 }
